@@ -31,6 +31,6 @@ Material:
     - _BackgroundInt: 0
     - _ColorThreshold: 0
     - _GradThresh: 0.01
-    - _Samples: 4.17
-    - _Senstivity: 10
+    - _Samples: 10
+    - _Senstivity: 20
     m_Colors: []
