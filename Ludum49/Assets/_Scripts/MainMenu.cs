@@ -18,16 +18,22 @@ public class MainMenu : MonoBehaviour
     public Transform CamPosCredit;
     public Transform CamPosQuit;
 
+    [Header("Sounds Settings")]
+    public AudioClip OveredClip;
+    public AudioClip PressedClip;
+
     Animator startAnimator;
     Animator menuAnimator;
     Animator creditAnimator;
 
     Camera cam;
+    AudioSource source;
     bool start = false;
 
     private void Awake()
     {
         cam = Camera.main;
+        source = GetComponent<AudioSource>();
 
         startAnimator = CanvasStart.GetComponent<Animator>();
         menuAnimator = CanvasMenu.GetComponent<Animator>();
@@ -71,6 +77,7 @@ public class MainMenu : MonoBehaviour
     public void CreditsButton()
     {
         menuAnimator.SetTrigger("CanvasMenuFadeOut");
+        Debug.Log("canvascreditfadein");
         creditAnimator.SetTrigger("CanvasCreditFadeIn");
         if (Menu3D)
         {
@@ -109,5 +116,19 @@ public class MainMenu : MonoBehaviour
             menuAnimator.SetTrigger("CanvasMenuFadeOut");
             Application.Quit();
         }
+    }
+
+    public void ButtonOvered()
+    {
+        if (source.isPlaying)
+            source.Stop();
+        source.PlayOneShot(OveredClip);
+    }
+
+    public void ButtonPressed()
+    {
+        if (source.isPlaying)
+            source.Stop();
+        source.PlayOneShot(PressedClip);
     }
 }

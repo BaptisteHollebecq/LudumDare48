@@ -371,44 +371,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 107169376977120680, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107169376977120680, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1377935095}
-    - target: {fileID: 107169376977120680, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 107169376977120680, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 734315248372515227, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 816963884303115964, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.8867924
-      objectReference: {fileID: 0}
-    - target: {fileID: 816963884303115964, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.46431112
-      objectReference: {fileID: 0}
-    - target: {fileID: 816963884303115964, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.46431112
-      objectReference: {fileID: 0}
     - target: {fileID: 1587129055852469263, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
       propertyPath: m_Name
@@ -416,74 +381,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761968839850596750, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1761968839850596750, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1377935095}
-    - target: {fileID: 1761968839850596750, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2593002125716109880, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705513725899629641, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: Menu3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574519651595674763, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3574519651595674763, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1377935095}
     - target: {fileID: 3574519651595674763, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3884615726664267343, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4607252146369544830, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 4888593172285031156, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5621146798574573497, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5621146798574573497, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1377935095}
     - target: {fileID: 5621146798574573497, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1377935095}
     - target: {fileID: 5957527526570141742, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -538,51 +448,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6397159858409445852, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.8867924
-      objectReference: {fileID: 0}
-    - target: {fileID: 6397159858409445852, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.46431112
-      objectReference: {fileID: 0}
-    - target: {fileID: 6397159858409445852, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.46431112
-      objectReference: {fileID: 0}
-    - target: {fileID: 6843593222416854889, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7806363809299298219, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.8867924
-      objectReference: {fileID: 0}
-    - target: {fileID: 7806363809299298219, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.46431112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7806363809299298219, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.46431112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913440610772707202, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8689300425390335726, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76b8fbec8f8bc54f9d30166bd58faf9, type: 3}
