@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 7432877926330197021}
   - component: {fileID: 5803231728253266872}
   - component: {fileID: 8605762935469318002}
-  - component: {fileID: 4466951765839928672}
+  - component: {fileID: 8774906004859601708}
   m_Layer: 8
   m_Name: Mur
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7432877926330197021
 Transform:
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4466951765839928672
+--- !u!65 &8774906004859601708
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,5 +91,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 0.40000015, z: 3.0235596}
-  m_Center: {x: 0, y: 0, z: 1.5117798}
+  m_Size: {x: 3.0000014, y: 0.40000078, z: 3.0235603}
+  m_Center: {x: -1.49687, y: -0.00000036043508, z: 1.5117801}
