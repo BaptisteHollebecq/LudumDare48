@@ -108,7 +108,15 @@ public class AttackZone : MonoBehaviour
         if (other.tag == "Wall")
         {
             if (sword)
+            {
                 parent.BoostLight();
+                durability--;
+                if (durability <= 0)
+                {
+                    sword = false;
+                    weapon = false;
+                }
+            }
         }
         if (other.tag == "Torch")
         {

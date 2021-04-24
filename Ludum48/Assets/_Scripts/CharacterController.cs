@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
@@ -95,7 +96,16 @@ public class CharacterController : MonoBehaviour
         speed = MoveSpeed;
         if (!attacking)
         {
-            InputDirection = new Vector3(horizontalAxis = Input.GetAxis("Horizontal"), 0, verticalAxis = Input.GetAxis("Vertical"));
+            Vector3 camForward = Camera.main.transform.forward;
+            Vector3 camRight = Camera.main.transform.right;
+            camForward.y = 0;
+            camForward = camForward.normalized;
+            camRight.y = 0;
+            camRight = camRight.normalized;
+
+
+            //InputDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            InputDirection = camRight * Input.GetAxis("Horizontal") + camForward * Input.GetAxis("Vertical");
             if (InputDirection.x > .1f)
             {
                 animator.SetBool("Running", true);
@@ -239,6 +249,7 @@ public class CharacterController : MonoBehaviour
         if (!boosted)
         {
             boosted = true;
+
             playerLight.range *= hitWallMultiplier;
             StartCoroutine(ResetLight());
         }
