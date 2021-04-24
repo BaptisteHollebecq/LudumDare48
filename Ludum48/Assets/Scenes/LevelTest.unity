@@ -522,11 +522,6 @@ PrefabInstance:
       propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3893090609247795278, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
-        type: 3}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3893090609247795279, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

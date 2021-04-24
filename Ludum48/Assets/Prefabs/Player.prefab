@@ -201,6 +201,7 @@ MonoBehaviour:
   keys: 0
   BigKeys: 0
   LastCheckPoint: {x: 0, y: 1, z: 0}
+  animator: {fileID: 2818568457097222077}
 --- !u!54 &498800190654287364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ GameObject:
   - component: {fileID: 9013566377734508038}
   - component: {fileID: 3575850783576926536}
   - component: {fileID: 4993980162833595886}
+  - component: {fileID: 2818568457097222077}
   m_Layer: 0
   m_Name: visuel
   m_TagString: Untagged
@@ -406,6 +408,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &2818568457097222077
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411213464941263104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4566009516406692764
 GameObject:
   m_ObjectHideFlags: 0
