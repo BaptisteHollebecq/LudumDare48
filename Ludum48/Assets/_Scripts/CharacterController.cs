@@ -103,34 +103,19 @@ public class CharacterController : MonoBehaviour
             camRight.y = 0;
             camRight = camRight.normalized;
 
-
-            //InputDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             InputDirection = camRight * Input.GetAxis("Horizontal") + camForward * Input.GetAxis("Vertical");
             if (InputDirection.x > .1f)
-            {
-                animator.SetBool("Running", true);
-                if (InputDirection.z != 0) InputDirection.x = .71f;
-                else InputDirection.x = 1f;
-            }
+                InputDirection.x = 1;
             if (InputDirection.x < -.1f)
-            {
-                animator.SetBool("Running", true);
-                if (InputDirection.z != 0) InputDirection.x = -.71f;
-                else InputDirection.x = -1f;
-            }
-            if (InputDirection.z > .1f)
-            {
-                animator.SetBool("Running", true);
-                if (InputDirection.x != 0) InputDirection.z = .71f;
-                else InputDirection.z = 1f;
-            }
-            if (InputDirection.z < -.1f)
-            {
-                animator.SetBool("Running", true);
-                if (InputDirection.x != 0) InputDirection.z = -.71f;
-                else InputDirection.z = -1f;
-            }
+                InputDirection.x = -1;
 
+            if (InputDirection.y > .1f)
+                InputDirection.y = 1;
+            if (InputDirection.y < -.1f)
+                InputDirection.y = -1;
+            InputDirection = InputDirection.normalized;
+
+            animator.SetBool("Running", true);
         }
         else
             InputDirection = Vector3.zero;
