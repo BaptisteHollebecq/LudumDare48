@@ -98,13 +98,17 @@ public class AttackZone : MonoBehaviour
         }
         if (other.tag == "Wall")
         {
-            parent.BoostLight();
+            if (sword)
+                parent.BoostLight();
         }
         if (other.tag == "Torch")
         {
-            Light l = other.transform.GetChild(0).GetComponent<Light>();
-            if (l.enabled == false)
-                l.enabled = true;
+            if (sword)
+            {
+                Light l = other.transform.GetChild(0).GetComponent<Light>();
+                if (l.enabled == false)
+                    l.enabled = true;
+            }
         }
     }
 
