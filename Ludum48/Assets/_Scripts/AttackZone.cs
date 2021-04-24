@@ -74,6 +74,15 @@ public class AttackZone : MonoBehaviour
 
     public void Attack()
     {
+        if (sword)
+        {
+            parent.animator.SetTrigger("Sword");
+        }
+        else
+        {
+            parent.animator.SetTrigger("Punch");
+        }
+
         foreach (GameObject g in Targets)
         {
             g.GetComponent<Enemy>().Damage(damage);

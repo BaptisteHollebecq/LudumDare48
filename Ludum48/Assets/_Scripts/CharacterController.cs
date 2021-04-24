@@ -51,6 +51,9 @@ public class CharacterController : MonoBehaviour
     bool isDead = false;
     [HideInInspector] public Vector3 LastCheckPoint = new Vector3(0,1,0);
 
+    [Header("Animation")]
+    public Animator animator;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -81,6 +84,8 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        animator.SetBool("Running", false);
+
         if (Izone.gotSomething && InteractSprite.active == false)
             InteractSprite.SetActive(true);
         else if (!Izone.gotSomething && InteractSprite.active == true)
@@ -93,21 +98,25 @@ public class CharacterController : MonoBehaviour
             InputDirection = new Vector3(horizontalAxis = Input.GetAxis("Horizontal"), 0, verticalAxis = Input.GetAxis("Vertical"));
             if (InputDirection.x > .1f)
             {
+                animator.SetBool("Running", true);
                 if (InputDirection.z != 0) InputDirection.x = .71f;
                 else InputDirection.x = 1f;
             }
             if (InputDirection.x < -.1f)
             {
+                animator.SetBool("Running", true);
                 if (InputDirection.z != 0) InputDirection.x = -.71f;
                 else InputDirection.x = -1f;
             }
             if (InputDirection.z > .1f)
             {
+                animator.SetBool("Running", true);
                 if (InputDirection.x != 0) InputDirection.z = .71f;
                 else InputDirection.z = 1f;
             }
             if (InputDirection.z < -.1f)
             {
+                animator.SetBool("Running", true);
                 if (InputDirection.x != 0) InputDirection.z = -.71f;
                 else InputDirection.z = -1f;
             }
