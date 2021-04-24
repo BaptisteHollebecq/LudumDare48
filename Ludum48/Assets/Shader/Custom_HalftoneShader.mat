@@ -32,18 +32,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blackshadow: 0.38
-    - _CustomLightAmp: 8.96
-    - _CustomLightingOffset: -0.02
-    - _Float0: 0.25
+    - _Blackshadow: 0.18
+    - _CustomLightAmp: 8.91
+    - _CustomLightingOffset: 0.05
+    - _Float0: 0.3
     - _RotateTex: 10.35
     - _Shadow: -0.05
-    - _Shadow1: 0.63
+    - _Shadow1: 0.69
     - _Specular: 0
     - __dirty: 0
     m_Colors:
     - _DiffuseColor: {r: 0, g: 0.502943, b: 1, a: 0}
     - _HalfToneUV: {r: 10, g: 10, b: 0, a: 0}
-    - _Objectcolor: {r: 0.9846988, g: 1, b: 0, a: 0}
+    - _Objectcolor: {r: 1, g: 1, b: 1, a: 0}
     - _ShadowColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}

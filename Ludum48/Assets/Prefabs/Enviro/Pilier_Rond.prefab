@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8448981642363829680}
   - component: {fileID: 5954927779915270522}
   - component: {fileID: 5138891785171839047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pilier_Rond
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
