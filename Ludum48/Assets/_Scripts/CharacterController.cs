@@ -104,15 +104,18 @@ public class CharacterController : MonoBehaviour
             camRight = camRight.normalized;
 
             InputDirection = camRight * Input.GetAxis("Horizontal") + camForward * Input.GetAxis("Vertical");
-            if (InputDirection.x > .1f)
+            if (InputDirection.x > .25f)
                 InputDirection.x = 1;
-            if (InputDirection.x < -.1f)
+            else if (InputDirection.x < -.25f)
                 InputDirection.x = -1;
+            else InputDirection.x = 0;
 
-            if (InputDirection.y > .1f)
-                InputDirection.y = 1;
-            if (InputDirection.y < -.1f)
-                InputDirection.y = -1;
+            if (InputDirection.z > .25f)
+                InputDirection.z = 1;
+            else if (InputDirection.z < -.25f)
+                InputDirection.z = -1;
+            else InputDirection.z = 0;
+
             InputDirection = InputDirection.normalized;
 
             animator.SetBool("Running", true);
