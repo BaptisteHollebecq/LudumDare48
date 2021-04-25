@@ -60,11 +60,11 @@ MonoBehaviour:
   sword: 0
   SwordDamage: 10
   SwordDurability: 15
-  SwordZoneSize: {x: 1, y: 0.6, z: 1}
-  SwordZonePos: {x: 0, y: 0, z: 0}
+  SwordZoneSize: {x: 2, y: 1, z: 2}
+  SwordZonePos: {x: 0, y: 0, z: 1}
   HandDamage: 4
-  HandZoneSize: {x: 0.5, y: 0.6, z: 0.6}
-  HandZonePos: {x: 0, y: 0, z: 0}
+  HandZoneSize: {x: 1, y: 1, z: 1}
+  HandZonePos: {x: 0, y: 0, z: 0.5}
   weapon: 0
   durability: 0
 --- !u!1 &498800190654287386
@@ -707,17 +707,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
