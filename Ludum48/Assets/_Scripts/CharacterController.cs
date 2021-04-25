@@ -77,6 +77,7 @@ public class CharacterController : MonoBehaviour
         BigKeys = 0;
         if (isDead)
         {
+            animator.SetBool("Dead", false);
             Life = 1;
             isDead = false;
         }
@@ -118,7 +119,7 @@ public class CharacterController : MonoBehaviour
 
             InputDirection = InputDirection.normalized;
 
-            animator.SetBool("Running", true);
+            
         }
         else
             InputDirection = Vector3.zero;
@@ -154,11 +155,15 @@ public class CharacterController : MonoBehaviour
 
         _rb.velocity = InputDirection * speed;
         if (InputDirection != Vector3.zero)
+        {
             Visuel.transform.forward = InputDirection.normalized;
+            animator.SetBool("Running", true);
+        }
     }
 
     IEnumerator Dash()
     {
+        animator.SetTrigger("Roll");
         canDash = false;
         attacking = false;
         canAttack = true;
@@ -171,6 +176,7 @@ public class CharacterController : MonoBehaviour
 
     IEnumerator Attack()
     {
+        animator.SetTrigger("Attack");
         attacking = true;
         canAttack = false;
         attackZone.SetActive(true);
@@ -194,6 +200,8 @@ public class CharacterController : MonoBehaviour
         Life--;
         canBeHit = false;
 
+        animator.SetTrigger("Hit");
+
         if (Life == 0)
         {
             collision.enabled = false;
@@ -210,8 +218,9 @@ public class CharacterController : MonoBehaviour
     IEnumerator Respawn()
     {
         //anim HUD
+        animator.SetBool("Dead", true);
         isDead = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         yield return new WaitForSeconds(1);
         attacking = false;
