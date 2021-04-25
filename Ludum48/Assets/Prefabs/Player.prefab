@@ -135,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 103343c9c0c98284bb7f647a4d2b8c40, type: 2}
+  - {fileID: 2100000, guid: 84222d1dd6e50c64b8a6d3bb3f6b6c87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
   MoveSpeed: 5
   AttackDuration: 0.2
   AttackReloadTime: 0.2
-  DashInvincibility: 0.1
-  DashReloadTime: 0.1
+  DashInvincibility: 0.2
+  DashReloadTime: 1
   attackZone: {fileID: 498800188916325276}
   InteractZone: {fileID: 4566009516406692764}
   InteractSprite: {fileID: 1733046951112581909}
@@ -1025,6 +1025,11 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5102395909350310581, guid: 05a9a7178f449214b95e7ee29878b0d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84222d1dd6e50c64b8a6d3bb3f6b6c87, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a9a7178f449214b95e7ee29878b0d7, type: 3}
 --- !u!4 &4128095166659155365 stripped
