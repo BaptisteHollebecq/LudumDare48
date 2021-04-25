@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1253118367828005029}
   - component: {fileID: 8486225794487567492}
   - component: {fileID: 3144229361518841448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Porte
-  m_TagString: Untagged
+  m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,9 +117,8 @@ MonoBehaviour:
   canInteract: 1
   LittleKeyPrice: 1
   BigKeyPrice: 1
-  Visuel: {fileID: 0}
-  col: {fileID: 0}
   AnimSpeed: 0.5
+  animator: {fileID: 0}
 --- !u!65 &3144229361518841448
 BoxCollider:
   m_ObjectHideFlags: 0

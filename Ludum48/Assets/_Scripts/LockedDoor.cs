@@ -10,6 +10,8 @@ public class LockedDoor : Interactable
 
     public float AnimSpeed = .5f;
 
+    public Animator animator;
+
     private void Awake()
     {
 
@@ -34,6 +36,6 @@ public class LockedDoor : Interactable
 
     public void Open()
     {
-        //animator set trigger ouvretameralapute
+        animator.SetTrigger("OpenDoor");
     }
 }
