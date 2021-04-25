@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
             bool raycast = Physics.Raycast(transform.position, Player.transform.position - transform.position, out hit);
             if (raycast && (Player.transform.position - transform.position).magnitude < Range && hit.transform.tag == "Player")
             {
-                transform.LookAt(Player.transform.position);
+                Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 if (!charging)
                     Charge = StartCoroutine(ShotCharging());
             }
