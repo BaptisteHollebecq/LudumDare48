@@ -54,6 +54,7 @@ public class CharacterController : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
+    public GameObject sword;
 
     private void Awake()
     {
@@ -86,6 +87,14 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (zone.sword)
+        {
+            sword.SetActive(true);
+        }
+        else
+        {
+            sword.SetActive(false);
+        }
         animator.SetBool("Running", false);
 
         if (Izone.gotSomething && InteractSprite.active == false)
