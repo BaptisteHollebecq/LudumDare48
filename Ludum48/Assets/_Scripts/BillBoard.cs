@@ -6,6 +6,10 @@ public class BillBoard : MonoBehaviour
 {
     private void Update()
     {
-        transform.LookAt(Camera.main.transform.position);
+        Vector3 dir = (transform.position - Camera.main.transform.position).normalized;
+
+        transform.forward = dir;
+        Debug.DrawRay(transform.position, dir, Color.red);
+
     }
 }

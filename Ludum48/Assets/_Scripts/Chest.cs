@@ -74,8 +74,8 @@ public class Chest : Interactable
             }
             Anim.SetActive(true);
             Anim.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-            Anim.transform.DOMove(new Vector3(Anim.transform.position.x, Anim.transform.position.y + 2 , Anim.transform.position.z), 1f);
-            Anim.GetComponent<SpriteRenderer>().DOFade(0, 1f).OnComplete(() =>
+            Anim.transform.DOMove(new Vector3(Anim.transform.position.x, Anim.transform.position.y + 2 , Anim.transform.position.z), 3f);
+            Anim.GetComponent<SpriteRenderer>().DOFade(0, 3f).OnComplete(() =>
             {
                 Destroy(Anim.gameObject);
             });

@@ -7,8 +7,6 @@ public class LockedDoor : Interactable
 {
     public int LittleKeyPrice = 1;
     public int BigKeyPrice = 1;
-    public Transform Visuel;
-    public Collider col;
 
     public float AnimSpeed = .5f;
 
@@ -19,14 +17,14 @@ public class LockedDoor : Interactable
 
     public override void Interact()
     {
-        CharacterController player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+        CharacterController player = GameObject.Find("Player").GetComponent<CharacterController>();
         if (player.keys >= LittleKeyPrice)
         {
             player.keys -= LittleKeyPrice;
             Open();
             canInteract = false;
         }
-        if (player.BigKeys >= BigKeyPrice)
+        else if (player.BigKeys >= BigKeyPrice)
         {
             player.BigKeys -= BigKeyPrice;
             Open();
@@ -36,9 +34,6 @@ public class LockedDoor : Interactable
 
     public void Open()
     {
-        Visuel.DOScaleY(0, AnimSpeed).OnComplete(() =>
-        {
-            col.enabled = false;
-        });
+        //animator set trigger ouvretameralapute
     }
 }
