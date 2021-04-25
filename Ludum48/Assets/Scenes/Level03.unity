@@ -6244,11 +6244,6 @@ PrefabInstance:
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3893090609247795278, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
-        type: 3}
-      propertyPath: field of view
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 3893090609247795279, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6993,7 +6988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &577523574
 Light:
   m_ObjectHideFlags: 0
