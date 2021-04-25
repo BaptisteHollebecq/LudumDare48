@@ -80,11 +80,11 @@ GameObject:
   - component: {fileID: 498800190654287367}
   - component: {fileID: 498800190654287366}
   - component: {fileID: 498800190654287385}
-  - component: {fileID: 498800190654287384}
   - component: {fileID: 498800190654287387}
   - component: {fileID: 498800190654287364}
   - component: {fileID: 3814355456000191410}
   - component: {fileID: 6363252171750347479}
+  - component: {fileID: 3615776546392797111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -157,19 +157,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &498800190654287384
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 498800190654287386}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.37
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &498800190654287387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +181,7 @@ MonoBehaviour:
   InteractSprite: {fileID: 1733046951112581909}
   zone: {fileID: 0}
   Hud: {fileID: 3130012650683008270}
-  collision: {fileID: 498800190654287384}
+  collision: {fileID: 3615776546392797111}
   Walls:
     serializedVersion: 2
     m_Bits: 256
@@ -428,6 +415,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3615776546392797111
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498800190654287386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.54
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1733046951112581909
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9024058736110332349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26288286, y: 3.8, z: 1.7216572}
+  m_LocalPosition: {x: -0.26288286, y: 3.8, z: 0.9}
   m_LocalScale: {x: 2.857143, y: 2.857143, z: 2.857143}
   m_Children: []
   m_Father: {fileID: 2843712112422768006}
@@ -954,7 +955,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.092009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
@@ -964,7 +965,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10258
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05a9a7178f449214b95e7ee29878b0d7,
         type: 3}

@@ -175,6 +175,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porte
       objectReference: {fileID: 0}
+    - target: {fileID: 6164913880581171897, guid: 33c2ed8b183da7746b9959e2494657a7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3efd1c4b3378d794d97c676f5c86a1ce, type: 2}
     - target: {fileID: 8486225794487567492, guid: 33c2ed8b183da7746b9959e2494657a7,
         type: 3}
       propertyPath: animator
