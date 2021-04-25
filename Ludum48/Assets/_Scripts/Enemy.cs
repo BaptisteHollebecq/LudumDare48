@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float Range = 5;
     public float ChargingTime = 5;
     public float ReloadTime = 1;
+    public float ReloadCACTime = 1;
     public Transform Visuel;
     public Transform PointA;
     public Transform PointB;
@@ -191,7 +192,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator ReloadAttack()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(ReloadCACTime);
         canAttack = true;
     }
 
