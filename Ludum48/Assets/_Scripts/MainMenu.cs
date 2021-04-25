@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
@@ -11,6 +12,8 @@ public class MainMenu : MonoBehaviour
     public GameObject CanvasStart;
     public GameObject CanvasMenu;
     public GameObject CanvasCredit;
+
+    public List<Buttons> buttons = new List<Buttons>();
 
     [Header("IF 3D MENU " + "\u2713")]
     public Transform CamPosPlay;
@@ -29,6 +32,11 @@ public class MainMenu : MonoBehaviour
     Camera cam;
     AudioSource source;
     bool start = false;
+    bool canSwicth = true;
+    public bool isOnMenu = false;
+    public bool isOnCredit = false;
+
+    int index = 0;
 
     private void Awake()
     {
@@ -43,16 +51,66 @@ public class MainMenu : MonoBehaviour
         {
             CanvasBackGround.SetActive(false);
         }
+        buttons[0].OnPointerEnter();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !start)
+        if (Input.GetButtonDown("Interact"))
         {
-            start = true;
-            startAnimator.SetTrigger("CanvasStartFadeOut");
-            menuAnimator.SetTrigger("CanvasMenuFadeIn");
+            if (!start)
+            {
+                start = true;
+                isOnMenu = true;
+                startAnimator.SetTrigger("CanvasStartFadeOut");
+                menuAnimator.SetTrigger("CanvasMenuFadeIn");
+            }
+            else if (isOnMenu)
+            {
+                if (index == 0)
+                    PlayButton();
+                if (index == 1)
+                    CreditsButton();
+                if (index == 2)
+                    QuitButton();
+                source.PlayOneShot(PressedClip);
+            }
+            else if (isOnCredit)
+            {
+                BackButton();
+                source.PlayOneShot(PressedClip);
+            }
         }
+        if (Input.GetButtonDown("Rolls") && isOnCredit)
+        {
+            BackButton();
+            source.PlayOneShot(PressedClip);
+        }
+        if (Input.GetAxis("Vertical") == 1 && isOnMenu && canSwicth)
+        {
+            buttons[index].OnPointerExit();
+            index--;
+            if (index < 0)
+                index = buttons.Count - 1;
+            buttons[index].OnPointerEnter();
+            StartCoroutine(ResetSwitch());
+        }
+        if (Input.GetAxis("Vertical") == -1 && isOnMenu && canSwicth)
+        {
+            buttons[index].OnPointerExit();
+            index++;
+            if (index == buttons.Count)
+                index = 0;
+            buttons[index].OnPointerEnter();
+            StartCoroutine(ResetSwitch());
+        }
+    }
+
+    IEnumerator ResetSwitch()
+    {
+        canSwicth = false;
+        yield return new WaitForSeconds(.2f);
+        canSwicth = true;
     }
 
     public void PlayButton()
@@ -75,10 +133,11 @@ public class MainMenu : MonoBehaviour
     }
 
     public void CreditsButton()
-    {
+    {   
         menuAnimator.SetTrigger("CanvasMenuFadeOut");
-        Debug.Log("canvascreditfadein");
         creditAnimator.SetTrigger("CanvasCreditFadeIn");
+        isOnCredit = true;
+        isOnMenu = false;
         if (Menu3D)
         {
             cam.transform.DOKill();
@@ -91,6 +150,8 @@ public class MainMenu : MonoBehaviour
     {
         menuAnimator.SetTrigger("CanvasMenuFadeIn");
         creditAnimator.SetTrigger("CanvasCreditFadeOut");
+        isOnCredit = false;
+        isOnMenu = true;
         if (Menu3D)
         {
             cam.transform.DOKill();
@@ -116,19 +177,5 @@ public class MainMenu : MonoBehaviour
             menuAnimator.SetTrigger("CanvasMenuFadeOut");
             Application.Quit();
         }
-    }
-
-    public void ButtonOvered()
-    {
-        if (source.isPlaying)
-            source.Stop();
-        source.PlayOneShot(OveredClip);
-    }
-
-    public void ButtonPressed()
-    {
-        if (source.isPlaying)
-            source.Stop();
-        source.PlayOneShot(PressedClip);
     }
 }

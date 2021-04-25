@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
     public GameObject InteractSprite;
     [HideInInspector] public AttackZone zone;
     InteractionZone Izone;
-
+    public HUD Hud;
     public Collider collision;
     public LayerMask Walls;
 
@@ -47,6 +47,7 @@ public class CharacterController : MonoBehaviour
     bool attacking = false;
     bool canAttack = true;
     bool canDash = true;
+    bool dashing = false;
     bool canBeHit = true;
 
     bool isDead = false;
@@ -141,8 +142,9 @@ public class CharacterController : MonoBehaviour
         {
             StopAllCoroutines();
             if (!Physics.Raycast(transform.position, transform.forward, 3, Walls))
-                _rb.AddForce(InputDirection * 125, ForceMode.VelocityChange);
-            StartCoroutine(Dash());
+            {
+                StartCoroutine(Dash());
+            }
         }
 
         if (Input.GetButtonDown("Switch"))
@@ -161,6 +163,8 @@ public class CharacterController : MonoBehaviour
                 Izone.inRange.RemoveAt(0);
         }
 
+        if (dashing)
+            speed *= 3.5f;
 
         _rb.velocity = InputDirection * speed;
         if (InputDirection != Vector3.zero)
@@ -174,11 +178,13 @@ public class CharacterController : MonoBehaviour
     {
         animator.SetTrigger("Roll");
         canDash = false;
+        dashing = true;
         attacking = false;
         canAttack = true;
         collision.enabled = false;
         yield return new WaitForSeconds(DashInvincibility);
         collision.enabled = true;
+        dashing = false;
         yield return new WaitForSeconds(DashReloadTime);
         canDash = true;
     }
