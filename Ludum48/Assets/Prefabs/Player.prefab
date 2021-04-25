@@ -477,7 +477,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eedd1c6394ab987488f65530494514df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -800,6 +800,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2893031444539150158, guid: 3c7ef35fa04af454cb35a87e1fea169d,
+        type: 3}
+      propertyPath: field of view
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 2893031444539150159, guid: 3c7ef35fa04af454cb35a87e1fea169d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1030,6 +1035,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 84222d1dd6e50c64b8a6d3bb3f6b6c87, type: 2}
+    - target: {fileID: 5102395909350310581, guid: 05a9a7178f449214b95e7ee29878b0d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bb70df284910634b838b7761e929478, type: 2}
+    - target: {fileID: 5102395909350310581, guid: 05a9a7178f449214b95e7ee29878b0d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bb70df284910634b838b7761e929478, type: 2}
+    - target: {fileID: 5102395909350310581, guid: 05a9a7178f449214b95e7ee29878b0d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bb70df284910634b838b7761e929478, type: 2}
+    - target: {fileID: 5102395909350310581, guid: 05a9a7178f449214b95e7ee29878b0d7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[7]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cd62f3b7ac67354d84843a3210a34a0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a9a7178f449214b95e7ee29878b0d7, type: 3}
 --- !u!4 &4128095166659155365 stripped

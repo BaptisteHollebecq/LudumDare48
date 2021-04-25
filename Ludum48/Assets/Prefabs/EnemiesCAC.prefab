@@ -253,6 +253,7 @@ MonoBehaviour:
   Range: 5
   ChargingTime: 5
   ReloadTime: 1
+  ReloadCACTime: 1
   Visuel: {fileID: 8734921848629780294}
   PointA: {fileID: 2468433867711698641}
   PointB: {fileID: 2468433868376344661}
@@ -475,6 +476,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gobelino_Walk
       objectReference: {fileID: 0}
+    - target: {fileID: 2449515774850106658, guid: 2f480aeba2b047342a18b7be219d32ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ae238e18b189fb40b9da7646f3c55ac, type: 2}
+    - target: {fileID: 2449515774850106658, guid: 2f480aeba2b047342a18b7be219d32ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3efd1c4b3378d794d97c676f5c86a1ce, type: 2}
+    - target: {fileID: 2449515774850106658, guid: 2f480aeba2b047342a18b7be219d32ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 017d4fe19940208448e8763b4726627e, type: 2}
+    - target: {fileID: 2449515774850106658, guid: 2f480aeba2b047342a18b7be219d32ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d48cd59ed15ffe44990c5ecd16b544d, type: 2}
+    - target: {fileID: 2449515774850106658, guid: 2f480aeba2b047342a18b7be219d32ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: d326b5c279e719b458629c34dc64653c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f480aeba2b047342a18b7be219d32ef, type: 3}
 --- !u!1 &8247073369251382780 stripped
