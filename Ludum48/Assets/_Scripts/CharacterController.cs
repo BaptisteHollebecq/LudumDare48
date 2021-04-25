@@ -57,14 +57,18 @@ public class CharacterController : MonoBehaviour
     public Animator animator;
     public GameObject sword;
 
+    [Header("Sound")]
+    public AudioSource source;
+
+    public AudioClip Slash;
+    public AudioClip roll;
+    public AudioClip Hit;
+    public List<AudioClip> Steps = new List<AudioClip>();
+    bool playStep = true;
+
+
     private void Awake()
     {
-        if (_instance != null && _instance != this)
-            Destroy(gameObject);
-
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
-
         _rb = GetComponent<Rigidbody>();
         zone = attackZone.GetComponent<AttackZone>();
         Izone = InteractZone.GetComponent<InteractionZone>();
@@ -74,16 +78,24 @@ public class CharacterController : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        if (_instance != null && _instance != this)
+            Destroy(gameObject);
+
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
         transform.position = new Vector3(0, 1, 0);
         keys = 0;
         BigKeys = 0;
+
         if (isDead)
         {
             animator.SetBool("Dead", false);
             Life = 1;
             isDead = false;
         }
-
+        Hud.SetLife();
+        Hud.SetKeys();
     }
 
     private void Update()
@@ -140,12 +152,13 @@ public class CharacterController : MonoBehaviour
 
         if (Input.GetButtonDown("Rolls") && canDash && InputDirection != Vector3.zero)
         {
-            StopAllCoroutines();
-            StartCoroutine(Dash());
-            /*if (!Physics.Raycast(transform.position, transform.forward, 3, Walls))
+            
+            if (!Physics.Raycast(transform.position, InputDirection * 2, 1f, Walls))
             {
-               
-            }*/
+                Debug.DrawRay(transform.position, InputDirection * 2, Color.red, 60);
+                StopAllCoroutines();
+                StartCoroutine(Dash());
+            }
         }
 
         if (Input.GetButtonDown("Switch"))
@@ -171,9 +184,22 @@ public class CharacterController : MonoBehaviour
         if (InputDirection != Vector3.zero)
         {
             Visuel.transform.forward = InputDirection.normalized;
+            if (playStep)
+            {
+                source.PlayOneShot(Steps[Random.Range(0, Steps.Count)]);
+                playStep = false;
+                StartCoroutine(StepSound());
+            }
             animator.SetBool("Running", true);
         }
     }
+
+    IEnumerator StepSound()
+    {
+        yield return new WaitForSeconds(.34f);
+        playStep = true;
+    }
+
 
     IEnumerator Dash()
     {
@@ -183,6 +209,7 @@ public class CharacterController : MonoBehaviour
         attacking = false;
         canAttack = true;
         collision.enabled = false;
+        source.PlayOneShot(roll);
         yield return new WaitForSeconds(DashInvincibility);
         collision.enabled = true;
         dashing = false;
@@ -193,6 +220,8 @@ public class CharacterController : MonoBehaviour
     IEnumerator Attack()
     {
         animator.SetTrigger("Attack");
+        if (zone.sword)
+            source.PlayOneShot(Slash);
         attacking = true;
         canAttack = false;
         attackZone.SetActive(true);
@@ -217,6 +246,7 @@ public class CharacterController : MonoBehaviour
         canBeHit = false;
         Hud.SetLife();
         animator.SetTrigger("Hit");
+        source.PlayOneShot(Hit);
 
         if (Life == 0)
         {

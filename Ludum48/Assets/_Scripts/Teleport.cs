@@ -9,6 +9,6 @@ public class Teleport : Interactable
 
     public override void Interact()
     {
-        CharacterController.Instance.transform.position = new Vector3(TargetTeleport.transform.position.x, 1, TargetTeleport.transform.position.z);
+        CharacterController.Instance.transform.position = new Vector3(TargetTeleport.transform.position.x, TargetTeleport.transform.position.y, TargetTeleport.transform.position.z);
     }
 }

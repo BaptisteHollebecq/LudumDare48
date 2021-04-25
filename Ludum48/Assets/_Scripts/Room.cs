@@ -8,7 +8,12 @@ public class Room : MonoBehaviour
 
     public List<Door> Doors = new List<Door>();
     public List<GameObject> Enemies = new List<GameObject>();
+    public AudioSource source;
+    public AudioClip open;
+    public AudioClip close;
 
+    bool activated = false;
+    bool end = false;
 
     private void Awake()
     {
@@ -32,8 +37,10 @@ public class Room : MonoBehaviour
                 Enemies.RemoveAt(i);
         }
 
-        if (Enemies.Count == 0)
+        if (Enemies.Count == 0 && !end)
         {
+            end = true;
+            source.PlayOneShot(open);
             foreach (Door d in Doors)
             {
                 d.Open();
@@ -51,13 +58,18 @@ public class Room : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            foreach (Door d in Doors)
+            if (!activated)
             {
-                d.Close();
-            }
-            foreach (GameObject g in Enemies)
-            {
-                g.SetActive(true);
+                activated = true;
+                source.PlayOneShot(close);
+                foreach (Door d in Doors)
+                {
+                    d.Close();
+                }
+                foreach (GameObject g in Enemies)
+                {
+                    g.SetActive(true);
+                }
             }
         }
     }

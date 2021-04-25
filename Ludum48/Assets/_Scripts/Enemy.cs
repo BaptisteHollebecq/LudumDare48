@@ -115,18 +115,28 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Took " + value + " Damage");
         Life -= value;
-        animator.SetTrigger("Hit");
+        if (animator != null)
+            animator.SetTrigger("Hit");
         if (Life <= 0)
         {
-            animator.SetBool("Dead", true);
-            StartCoroutine(Die());
+            attacking = true;
+            if (animator != null)
+            {
+                animator.SetTrigger("isDead");
+                StartCoroutine(Die());
+            }
+            else
+            {
+                Destroy(gameObject);
+                transform.parent.GetComponent<isDead>().dead = true;
+            }
             
         }
     }
 
     IEnumerator Die()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
         transform.parent.GetComponent<isDead>().dead = true;
     }
@@ -154,7 +164,8 @@ public class Enemy : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1);
-            attacking = false;
+            if (Life > 0)
+                attacking = false;
             Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
             StartCoroutine(ReloadAttack());
         }

@@ -23,7 +23,7 @@ public class HUD : MonoBehaviour
 
     private void Awake()
     {
-        player = CharacterController.Instance;
+        player = GameObject.Find("Player").GetComponent<CharacterController>();
 
         Life.sprite = ThreeLife;
         Keys.enabled = false;
@@ -32,7 +32,7 @@ public class HUD : MonoBehaviour
 
     public void SetLife()
     {
-        Life.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .1f);
+        Life.transform.DOScale(new Vector3(5f, 5, 5), .5f);
         if (player.Life == 3)
             Life.sprite = ThreeLife;
         if (player.Life == 2)
@@ -41,7 +41,7 @@ public class HUD : MonoBehaviour
             Life.sprite = OneLife;
         if (player.Life == 0)
             Life.sprite = ZeroLife;
-        Life.transform.DOScale(new Vector3(1, 1, 1), .3f);
+        Life.transform.DOScale(new Vector3(1, 1, 1), 1f);
     }
 
     public void SetKeys()
