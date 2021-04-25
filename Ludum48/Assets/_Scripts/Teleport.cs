@@ -8,7 +8,7 @@ public class Teleport : Interactable
 
     GameObject player;
 
-    private void Awake()
+    public void Awake()
     {
         player = GameObject.Find("Player");
     }

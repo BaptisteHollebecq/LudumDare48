@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
 
     private void Awake()
     {
+
         col.enabled = false;
         Visuel.localScale = new Vector3(1, 0, 1);
     }

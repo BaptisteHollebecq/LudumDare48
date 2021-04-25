@@ -57,10 +57,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5e42c6016852848aa0742e7e7b05a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 498800190654287387}
   box: {fileID: 498800188916325274}
   sword: 0
   SwordDamage: 10
-  SwordDurability: 15
+  SwordDurability: 20
   SwordZoneSize: {x: 2, y: 1, z: 2}
   SwordZonePos: {x: 0, y: 0, z: 1}
   HandDamage: 4

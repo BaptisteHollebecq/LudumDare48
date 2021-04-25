@@ -96,6 +96,7 @@ public class CharacterController : MonoBehaviour
         }
         Hud.SetLife();
         Hud.SetKeys();
+        Hud.SetSword();
     }
 
     private void Update()
