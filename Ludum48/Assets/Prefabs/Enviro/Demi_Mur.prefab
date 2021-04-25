@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2086358226672506436}
   - component: {fileID: 4256126537270010510}
   - component: {fileID: 8023433648964517484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Demi_Mur
   m_TagString: Wall
   m_Icon: {fileID: 0}
