@@ -256,9 +256,14 @@ MonoBehaviour:
   Visuel: {fileID: 8734921848629780294}
   PointA: {fileID: 2468433867711698641}
   PointB: {fileID: 2468433868376344661}
+  spawnBullet: {fileID: 0}
   Bullet: {fileID: 3024501651243997636, guid: 31a6baa25f76bc441b8f5e7db298e070, type: 3}
   source: {fileID: 7426611268734014429}
   shot: {fileID: 8300000, guid: ffe56fa609d43034a8340bff969ec92d, type: 3}
+  attack: {fileID: 8300000, guid: a1adcfe2f94a4c64f806568917dddae0, type: 3}
+  death: {fileID: 8300000, guid: 83ce494f3fcf7834189e3a6c3b66af31, type: 3}
+  hit: {fileID: 8300000, guid: 28e9c74d1fbb4294e9411a6c5b4cf4dd, type: 3}
+  Laugth: {fileID: 8300000, guid: 08689df8ae6a2ec45b9a84dcafac0959, type: 3}
   animator: {fileID: 1099690433771905480}
 --- !u!135 &7687125240052924624
 SphereCollider:

@@ -19,6 +19,10 @@ public class Enemy : MonoBehaviour
 
     public AudioSource source;
     public AudioClip shot;
+    public AudioClip attack;
+    public AudioClip death;
+    public AudioClip hit;
+    public AudioClip Laugth;
 
     Vector3 target;
     bool targetA = false;
@@ -27,6 +31,7 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
+    bool isDead = false;
 
     public Animator animator;
 
@@ -49,7 +54,7 @@ public class Enemy : MonoBehaviour
     {
         if (!RangedEnemy)
         {
-            if (!attacking)
+            if (!attacking && !isDead)
             {
                 
                 if ((target - transform.position).magnitude < 0.1f)
@@ -122,13 +127,18 @@ public class Enemy : MonoBehaviour
         Debug.Log("Took " + value + " Damage");
         Life -= value;
         if (animator != null)
+        {
             animator.SetTrigger("Hit");
+            source.PlayOneShot(hit);
+        }
         if (Life <= 0)
         {
-            attacking = true;
+            //attacking = true;
             if (animator != null)
             {
+                source.PlayOneShot(death);
                 animator.SetTrigger("isDead");
+                isDead = true;
                 StartCoroutine(Die());
             }
             else
@@ -161,11 +171,13 @@ public class Enemy : MonoBehaviour
         canAttack = false;
         if (animator != null)
             animator.SetTrigger("Attack");
+        source.PlayOneShot(attack);
         Player.GetComponent<CharacterController>().Damage();
         if (Player.GetComponent<CharacterController>().Life == 0)
         {
             if (animator != null)
                 animator.SetBool("Dance", true);
+            source.PlayOneShot(Laugth);
         }
         else
         {
