@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     bool attacking = false;
     bool canAttack = true;
 
+    public Animator animator;
+
     private void Awake()
     {
         Player = GameObject.Find("Player");
@@ -126,10 +128,10 @@ public class Enemy : MonoBehaviour
     {
         attacking = true;
         canAttack = false;
-        //lance ton anim ici frr
+        animator.SetTrigger("Attack");
         CharacterController.Instance.Damage();
         if (CharacterController.Instance.Life == 0)
-            // la danse c'est ici que ca se passe 
+            animator.SetBool("Dance", true);
         yield return new WaitForSeconds(1);
         attacking = false;
         StartCoroutine(ReloadAttack());
