@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float Range = 5;
     public float ChargingTime = 5;
     public float ReloadTime = 1;
+    public Transform Visuel;
     public Transform PointA;
     public Transform PointB;
     public GameObject Bullet;
@@ -46,25 +47,30 @@ public class Enemy : MonoBehaviour
         {
             if (!attacking)
             {
-                transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
-                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
-                if ((target - transform.position).magnitude < 0.01f)
+                
+                Debug.DrawRay(transform.position, (target - transform.position).normalized, Color.red);
+                if ((target - transform.position).magnitude < 0.1f)
                 {
                     if (targetA)
                     {
                         target = PointB.position;
                         targetA = false;
+                        Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                     }
                     else
                     {
                         target = PointA.position;
                         targetA = true;
+                        Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                     }
+                    
                 }
+                transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
             }
             else
             {
-                transform.LookAt(CharacterController.Instance.transform);
+                Vector3 lookat = new Vector3(CharacterController.Instance.transform.position.x, Visuel.position.y , CharacterController.Instance.transform.position.z);
+                Visuel.LookAt(lookat);
             }
         }
         else
@@ -132,9 +138,13 @@ public class Enemy : MonoBehaviour
         CharacterController.Instance.Damage();
         if (CharacterController.Instance.Life == 0)
             animator.SetBool("Dance", true);
-        yield return new WaitForSeconds(1);
-        attacking = false;
-        StartCoroutine(ReloadAttack());
+        else
+        {
+            yield return new WaitForSeconds(1);
+            attacking = false;
+            Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            StartCoroutine(ReloadAttack());
+        }
     }
 
     IEnumerator ReloadAttack()

@@ -252,6 +252,7 @@ MonoBehaviour:
   Range: 5
   ChargingTime: 5
   ReloadTime: 1
+  Visuel: {fileID: 8734921848629780294}
   PointA: {fileID: 2468433867711698641}
   PointB: {fileID: 2468433868376344661}
   Bullet: {fileID: 3024501651243997636, guid: 31a6baa25f76bc441b8f5e7db298e070, type: 3}
