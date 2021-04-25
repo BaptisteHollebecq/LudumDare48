@@ -12,6 +12,9 @@ public class HUD : MonoBehaviour
     public Image BossKeys;
     public Image Sword;
     public Image SwordBackGround;
+    public Image PlaceHolder;
+    public float timingShowSprite;
+    public float timingFade;
 
     [Header("Sprites")]
     public Sprite ThreeLife;
@@ -32,6 +35,7 @@ public class HUD : MonoBehaviour
         BossKeys.enabled = false;
         Sword.enabled = false;
         SwordBackGround.enabled = false;
+        PlaceHolder.enabled = false;
     }
 
     public void SetSword()
@@ -98,4 +102,19 @@ public class HUD : MonoBehaviour
         else
             BossKeys.enabled = false;
     }
+
+    public void ShowSprite(Sprite sp)
+    {
+        PlaceHolder.sprite = sp;
+        PlaceHolder.enabled = true;
+        PlaceHolder.DOFade(1, timingFade);
+    }
+
+    public void HideSprite()
+    {
+        PlaceHolder.DOFade(0, timingFade);
+        PlaceHolder.sprite = null;
+        PlaceHolder.enabled = false;
+    }
+
 }
