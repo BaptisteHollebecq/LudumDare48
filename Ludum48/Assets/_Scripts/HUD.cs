@@ -32,7 +32,7 @@ public class HUD : MonoBehaviour
 
     public void SetLife()
     {
-        Life.transform.DOScale(new Vector3(5f, 5, 5), .5f);
+        Life.transform.DOScale(new Vector3(5, 5, 5), .5f);
         if (player.Life == 3)
             Life.sprite = ThreeLife;
         if (player.Life == 2)

@@ -127,7 +127,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Took " + value + " Damage");
         Life -= value;
-        if (animator != null)
+        if (animator != null && !isDead)
         {
             animator.SetTrigger("Hit");
             source.PlayOneShot(hit);
@@ -160,7 +160,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && canAttack && !RangedEnemy)
+        if (other.tag == "Player" && canAttack && !RangedEnemy && !isDead)
         {
             StartCoroutine(Attack());
         }

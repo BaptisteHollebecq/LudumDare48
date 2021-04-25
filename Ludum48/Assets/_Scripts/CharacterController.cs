@@ -276,10 +276,10 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.transform.tag == "Enemy" && canBeHit)
+        /*if (col.transform.tag == "Enemy" && canBeHit)
         {
             Damage();
-        }
+        }*/
     }
 
     public IEnumerator Invincibility()
