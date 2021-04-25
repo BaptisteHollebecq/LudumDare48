@@ -90,9 +90,10 @@ GameObject:
   - component: {fileID: 3124337424487438817}
   - component: {fileID: 2086358226672506436}
   - component: {fileID: 4256126537270010510}
+  - component: {fileID: 8023433648964517484}
   m_Layer: 0
   m_Name: Demi_Mur
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,3 +160,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8023433648964517484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310400455176880987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.40000007, z: 1.5420445}
+  m_Center: {x: -1.4968693, y: 0, z: 0.77102226}

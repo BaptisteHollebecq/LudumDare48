@@ -114,9 +114,11 @@ public class AttackZone : MonoBehaviour
         {
             if (sword)
             {
+                
                 Light l = other.transform.GetChild(0).GetComponent<Light>();
                 if (l.enabled == false)
                     l.enabled = true;
+                other.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Allumage");
             }
         }
     }
