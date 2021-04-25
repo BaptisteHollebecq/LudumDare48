@@ -141,10 +141,11 @@ public class CharacterController : MonoBehaviour
         if (Input.GetButtonDown("Rolls") && canDash && InputDirection != Vector3.zero)
         {
             StopAllCoroutines();
-            if (!Physics.Raycast(transform.position, transform.forward, 3, Walls))
+            StartCoroutine(Dash());
+            /*if (!Physics.Raycast(transform.position, transform.forward, 3, Walls))
             {
-                StartCoroutine(Dash());
-            }
+               
+            }*/
         }
 
         if (Input.GetButtonDown("Switch"))
