@@ -164,7 +164,8 @@ public class Enemy : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1);
-            attacking = false;
+            if (Life > 0)
+                attacking = false;
             Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
             StartCoroutine(ReloadAttack());
         }

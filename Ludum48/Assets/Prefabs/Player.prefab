@@ -209,6 +209,15 @@ MonoBehaviour:
   Slash: {fileID: 8300000, guid: 84c0ced10254837439b07813fb061577, type: 3}
   roll: {fileID: 8300000, guid: 6d57887f039271a40aedac89ab306d91, type: 3}
   Hit: {fileID: 8300000, guid: 22f6bdb0f7d01da4cb68bd32aeeb9dec, type: 3}
+  Steps:
+  - {fileID: 8300000, guid: 5c4d09d96c059b64392c042d0649d580, type: 3}
+  - {fileID: 8300000, guid: b5bc5f71fa07af845b47c2bc5a5cb764, type: 3}
+  - {fileID: 8300000, guid: 4e17a081981775f4a9b3b3d3f774cf1f, type: 3}
+  - {fileID: 8300000, guid: e346dd564b1154d448cc3bdb39096126, type: 3}
+  - {fileID: 8300000, guid: c936979f2186680469caed4fd8bf936e, type: 3}
+  - {fileID: 8300000, guid: c7006be8726cb614c8c618f4a89eed69, type: 3}
+  - {fileID: 8300000, guid: 2c23bcd631d1a684584f0db7871dbff9, type: 3}
+  - {fileID: 8300000, guid: 52ac395a1506daf44b0b763dedd29e7d, type: 3}
 --- !u!54 &498800190654287364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -921,9 +930,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a9a7178f449214b95e7ee29878b0d7, type: 3}
---- !u!1 &3187763163204359996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 05a9a7178f449214b95e7ee29878b0d7,
+--- !u!4 &4128095166659155365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 05a9a7178f449214b95e7ee29878b0d7,
     type: 3}
   m_PrefabInstance: {fileID: 2376876292186450541}
   m_PrefabAsset: {fileID: 0}
@@ -933,9 +942,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2376876292186450541}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4128095166659155365 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 05a9a7178f449214b95e7ee29878b0d7,
+--- !u!1 &3187763163204359996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 05a9a7178f449214b95e7ee29878b0d7,
     type: 3}
   m_PrefabInstance: {fileID: 2376876292186450541}
   m_PrefabAsset: {fileID: 0}

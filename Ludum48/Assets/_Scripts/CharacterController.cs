@@ -59,15 +59,16 @@ public class CharacterController : MonoBehaviour
 
     [Header("Sound")]
     public AudioSource source;
+
     public AudioClip Slash;
     public AudioClip roll;
     public AudioClip Hit;
+    public List<AudioClip> Steps = new List<AudioClip>();
+    bool playStep = true;
 
 
     private void Awake()
     {
-       
-
         _rb = GetComponent<Rigidbody>();
         zone = attackZone.GetComponent<AttackZone>();
         Izone = InteractZone.GetComponent<InteractionZone>();
@@ -151,8 +152,13 @@ public class CharacterController : MonoBehaviour
 
         if (Input.GetButtonDown("Rolls") && canDash && InputDirection != Vector3.zero)
         {
-            StopAllCoroutines();
-            StartCoroutine(Dash());
+            
+            if (!Physics.Raycast(transform.position, InputDirection * 2, 1f, Walls))
+            {
+                Debug.DrawRay(transform.position, InputDirection * 2, Color.red, 60);
+                StopAllCoroutines();
+                StartCoroutine(Dash());
+            }
         }
 
         if (Input.GetButtonDown("Switch"))
@@ -178,9 +184,22 @@ public class CharacterController : MonoBehaviour
         if (InputDirection != Vector3.zero)
         {
             Visuel.transform.forward = InputDirection.normalized;
+            if (playStep)
+            {
+                source.PlayOneShot(Steps[Random.Range(0, Steps.Count)]);
+                playStep = false;
+                StartCoroutine(StepSound());
+            }
             animator.SetBool("Running", true);
         }
     }
+
+    IEnumerator StepSound()
+    {
+        yield return new WaitForSeconds(.34f);
+        playStep = true;
+    }
+
 
     IEnumerator Dash()
     {
