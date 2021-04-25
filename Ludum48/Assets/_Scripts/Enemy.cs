@@ -11,10 +11,19 @@ public class Enemy : MonoBehaviour
     public float Range = 5;
     public float ChargingTime = 5;
     public float ReloadTime = 1;
+    public float ReloadCACTime = 1;
     public Transform Visuel;
     public Transform PointA;
     public Transform PointB;
+    public GameObject spawnBullet;
     public GameObject Bullet;
+
+    public AudioSource source;
+    public AudioClip shot;
+    public AudioClip attack;
+    public AudioClip death;
+    public AudioClip hit;
+    public AudioClip Laugth;
 
     Vector3 target;
     bool targetA = false;
@@ -23,6 +32,7 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
+    bool isDead = false;
 
     public Animator animator;
 
@@ -45,7 +55,7 @@ public class Enemy : MonoBehaviour
     {
         if (!RangedEnemy)
         {
-            if (!attacking)
+            if (!attacking && !isDead)
             {
                 
                 if ((target - transform.position).magnitude < 0.1f)
@@ -106,9 +116,11 @@ public class Enemy : MonoBehaviour
 
     public void Shot()
     {
-
-        var inst = Instantiate(Bullet, transform.GetChild(0).position, Quaternion.identity);
-        inst.GetComponent<Bullet>().Direction = (Player.transform.position - transform.position).normalized;
+        source.PlayOneShot(shot);
+        var inst = Instantiate(Bullet, spawnBullet.transform.position, Quaternion.identity);
+        Vector3 dir = (Player.transform.position -transform.position).normalized;
+        dir.y = 0;
+        inst.GetComponent<Bullet>().Direction = dir;
     }
 
     public void Damage(float value)
@@ -116,13 +128,18 @@ public class Enemy : MonoBehaviour
         Debug.Log("Took " + value + " Damage");
         Life -= value;
         if (animator != null)
+        {
             animator.SetTrigger("Hit");
+            source.PlayOneShot(hit);
+        }
         if (Life <= 0)
         {
-            attacking = true;
+            //attacking = true;
             if (animator != null)
             {
+                source.PlayOneShot(death);
                 animator.SetTrigger("isDead");
+                isDead = true;
                 StartCoroutine(Die());
             }
             else
@@ -155,11 +172,13 @@ public class Enemy : MonoBehaviour
         canAttack = false;
         if (animator != null)
             animator.SetTrigger("Attack");
+        source.PlayOneShot(attack);
         Player.GetComponent<CharacterController>().Damage();
         if (Player.GetComponent<CharacterController>().Life == 0)
         {
             if (animator != null)
                 animator.SetBool("Dance", true);
+            source.PlayOneShot(Laugth);
         }
         else
         {
@@ -173,7 +192,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator ReloadAttack()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(ReloadCACTime);
         canAttack = true;
     }
 
