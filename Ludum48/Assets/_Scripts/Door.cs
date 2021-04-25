@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+
         Visuel.DOScaleY(0, AnimSpeed).OnComplete(() =>
         {
             col.enabled = false;

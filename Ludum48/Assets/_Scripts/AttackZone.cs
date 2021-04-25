@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackZone : MonoBehaviour
 {
+    public BoxCollider box;
     public bool sword = true;
     [Header("AttackWithSword")]
     public float SwordDamage = 10;
@@ -19,7 +20,6 @@ public class AttackZone : MonoBehaviour
 
     [HideInInspector] public bool weapon;
     [HideInInspector] public int durability;
-    BoxCollider box;
     float damage;
     CharacterController parent;
 
@@ -95,7 +95,8 @@ public class AttackZone : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            Targets.Add(other.gameObject);
+            if (!Targets.Contains(other.gameObject))
+                Targets.Add(other.gameObject);
         }
         if (other.tag == "Wall")
         {

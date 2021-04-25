@@ -115,18 +115,28 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Took " + value + " Damage");
         Life -= value;
-        animator.SetTrigger("Hit");
+        if (animator != null)
+            animator.SetTrigger("Hit");
         if (Life <= 0)
         {
-            animator.SetBool("Dead", true);
-            StartCoroutine(Die());
+            attacking = true;
+            if (animator != null)
+            {
+                animator.SetTrigger("isDead");
+                StartCoroutine(Die());
+            }
+            else
+            {
+                Destroy(gameObject);
+                transform.parent.GetComponent<isDead>().dead = true;
+            }
             
         }
     }
 
     IEnumerator Die()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
         transform.parent.GetComponent<isDead>().dead = true;
     }
