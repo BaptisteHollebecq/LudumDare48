@@ -18,8 +18,12 @@ public class Chest : Interactable
    
     public List<GameObject> Enemies = new List<GameObject>();
 
+
+    public  AudioSource source;
+
     private void Awake()
     {
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         Anim.SetActive(false);
         if (traped)
@@ -34,6 +38,7 @@ public class Chest : Interactable
     public override void Interact()
     {
         base.Interact();
+        source.Play();
         if (!traped)
         {
             switch (Gift)

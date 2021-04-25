@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && canAttack)
+        if (other.tag == "Player" && canAttack && !RangedEnemy)
         {
             StartCoroutine(Attack());
         }
@@ -134,10 +134,14 @@ public class Enemy : MonoBehaviour
     {
         attacking = true;
         canAttack = false;
-        animator.SetTrigger("Attack");
+        if (animator != null)
+            animator.SetTrigger("Attack");
         CharacterController.Instance.Damage();
         if (CharacterController.Instance.Life == 0)
-            animator.SetBool("Dance", true);
+        {
+            if (animator != null)
+                animator.SetBool("Dance", true);
+        }
         else
         {
             yield return new WaitForSeconds(1);
