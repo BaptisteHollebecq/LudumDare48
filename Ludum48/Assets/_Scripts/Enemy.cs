@@ -115,9 +115,10 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Took " + value + " Damage");
         Life -= value;
-        //PTITE ANIM CHOUPIX DE DEGAT
+        animator.SetTrigger("Hit");
         if (Life <= 0)
         {
+            animator.SetBool("Dead", true)
             Destroy(gameObject); // PTITE ANIM CHOUPIX DE MORT
             transform.parent.GetComponent<isDead>().dead = true;
         }
