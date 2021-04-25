@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     GameObject Player;
     Coroutine Charge;
     bool charging = false;
+    bool attacking = false;
+    bool canAttack = true;
 
     private void Awake()
     {
@@ -40,19 +42,27 @@ public class Enemy : MonoBehaviour
     {
         if (!RangedEnemy)
         {
-            transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
-            if ((target - transform.position).magnitude < 0.01f)
+            if (!attacking)
             {
-                if (targetA)
+                transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
+                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
+                if ((target - transform.position).magnitude < 0.01f)
                 {
-                    target = PointB.position;
-                    targetA = false;
+                    if (targetA)
+                    {
+                        target = PointB.position;
+                        targetA = false;
+                    }
+                    else
+                    {
+                        target = PointA.position;
+                        targetA = true;
+                    }
                 }
-                else
-                {
-                    target = PointA.position;
-                    targetA = true;
-                }
+            }
+            else
+            {
+                transform.LookAt(CharacterController.Instance.transform);
             }
         }
         else
@@ -103,5 +113,33 @@ public class Enemy : MonoBehaviour
             transform.parent.GetComponent<isDead>().dead = true;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && canAttack)
+        {
+            StartCoroutine(Attack());
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        attacking = true;
+        canAttack = false;
+        //lance ton anim ici frr
+        CharacterController.Instance.Damage();
+        if (CharacterController.Instance.Life == 0)
+            // la danse c'est ici que ca se passe 
+        yield return new WaitForSeconds(1);
+        attacking = false;
+        StartCoroutine(ReloadAttack());
+    }
+
+    IEnumerator ReloadAttack()
+    {
+        yield return new WaitForSeconds(.5f);
+        canAttack = true;
+    }
+
 }
 

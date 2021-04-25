@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 2468433868836212860}
   - component: {fileID: 2468433868836213123}
   - component: {fileID: 2468433868836213122}
+  - component: {fileID: 7687125240052924624}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -253,3 +254,16 @@ MonoBehaviour:
   PointA: {fileID: 2468433867711698641}
   PointB: {fileID: 2468433868376344661}
   Bullet: {fileID: 3024501651243997636, guid: 31a6baa25f76bc441b8f5e7db298e070, type: 3}
+--- !u!135 &7687125240052924624
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468433868836213121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
