@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackZone : MonoBehaviour
 {
+    public CharacterController player;
     public BoxCollider box;
     public bool sword = true;
     [Header("AttackWithSword")]
@@ -30,7 +31,6 @@ public class AttackZone : MonoBehaviour
 
     private void Start()
     {
-        parent = transform.parent.parent.GetComponent<CharacterController>();
 
         SetUp();
     }
@@ -48,6 +48,7 @@ public class AttackZone : MonoBehaviour
             weapon = true;
             SetUp();
         }
+        player.Hud.SetSword();
     }
 
     public void Alamano()
@@ -87,7 +88,7 @@ public class AttackZone : MonoBehaviour
             sword = false;
             weapon = false;
         }
-
+        player.Hud.SetSword();
         Targets.Clear();
     }
 
@@ -102,13 +103,14 @@ public class AttackZone : MonoBehaviour
         {
             if (sword)
             {
-                parent.BoostLight();
+                player.BoostLight();
                 durability--;
                 if (durability <= 0)
                 {
                     sword = false;
                     weapon = false;
                 }
+                player.Hud.SetSword();
             }
         }
         if (other.tag == "Torch")

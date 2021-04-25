@@ -212,7 +212,81 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69adbc50d8eb9fe40ab01394f986ffc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c4f8aa3f3c9bb7449d78d2ab4b1dd5d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2204519028790812695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7589811401073061173}
+  - component: {fileID: 7448627737130740050}
+  - component: {fileID: 1529246468074400984}
+  m_Layer: 0
+  m_Name: SwordBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7589811401073061173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204519028790812695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6970153242723047358}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -481}
+  m_SizeDelta: {x: 400, y: 66}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7448627737130740050
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204519028790812695}
+  m_CullTransparentMesh: 0
+--- !u!114 &1529246468074400984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204519028790812695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c4f8aa3f3c9bb7449d78d2ab4b1dd5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -344,10 +418,32 @@ MonoBehaviour:
   Keys: {fileID: 288177944469962830}
   BossKeys: {fileID: 66081329155447863}
   Sword: {fileID: 5886447774322302477}
+  SwordBackGround: {fileID: 1529246468074400984}
   ThreeLife: {fileID: 21300000, guid: 8edb26affd709c748b82a669823bd16a, type: 3}
   TwoLife: {fileID: 21300000, guid: f5466403b76723f4ebf0cf5e95a9dff9, type: 3}
   OneLife: {fileID: 21300000, guid: 419a64c6973b3be499890661b29127a0, type: 3}
   ZeroLife: {fileID: 21300000, guid: ef3f4a9aa711beb4cbd0e7695eef1056, type: 3}
+  SwordsAnimation:
+  - {fileID: 21300000, guid: 884589704ef520247af48c31385ee6f9, type: 3}
+  - {fileID: 21300000, guid: 93a7cda4deefe5f4daad508e1e613f9a, type: 3}
+  - {fileID: 21300000, guid: 7937fd67b015e9f429859a21b3ecff3f, type: 3}
+  - {fileID: 21300000, guid: 73a04d9d8b6ba134bbff171b06ef809f, type: 3}
+  - {fileID: 21300000, guid: db55855e079007b43a2660db9753d0c7, type: 3}
+  - {fileID: 21300000, guid: b13ee91152c69b94a88b28ccfb5ffa47, type: 3}
+  - {fileID: 21300000, guid: f06de6f41c39a0741a3a2bdaebeda9a2, type: 3}
+  - {fileID: 21300000, guid: 1695f592e408815409a7d7fae7f9d464, type: 3}
+  - {fileID: 21300000, guid: 7f4e8aed29899224aa7f8262cc92b99e, type: 3}
+  - {fileID: 21300000, guid: 0be615da64a820b429d5755f17411e20, type: 3}
+  - {fileID: 21300000, guid: 9bbf86b5cd878854c906785930bc061d, type: 3}
+  - {fileID: 21300000, guid: d97ae44d1bb7e9544979bc974417153d, type: 3}
+  - {fileID: 21300000, guid: b1ba82044437efd45a7a96d395860558, type: 3}
+  - {fileID: 21300000, guid: 6997022d39c082346bccf69d4764d030, type: 3}
+  - {fileID: 21300000, guid: 8a1e584408ed5654699fbbc2e95e2061, type: 3}
+  - {fileID: 21300000, guid: 9c68cb5ad45d0994682eba99e4803bd0, type: 3}
+  - {fileID: 21300000, guid: 097759f5494ccfe4298aa0619e6f577e, type: 3}
+  - {fileID: 21300000, guid: 496ee99fe8564a2438bc85bba31b6d01, type: 3}
+  - {fileID: 21300000, guid: ab460548c0bca9946a08fdfe1c39400e, type: 3}
+  - {fileID: 21300000, guid: b4b9bf8a4fb285745b2f32a05327b357, type: 3}
 --- !u!1 &7522919817907030362
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +478,7 @@ RectTransform:
   - {fileID: 2355592068558595245}
   - {fileID: 761916724402953320}
   - {fileID: 3657819817477486588}
+  - {fileID: 7589811401073061173}
   m_Father: {fileID: 3283723919357438457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

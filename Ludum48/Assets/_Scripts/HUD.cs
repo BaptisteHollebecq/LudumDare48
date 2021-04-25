@@ -11,12 +11,14 @@ public class HUD : MonoBehaviour
     public Image Keys;
     public Image BossKeys;
     public Image Sword;
+    public Image SwordBackGround;
 
     [Header("Sprites")]
     public Sprite ThreeLife;
     public Sprite TwoLife;
     public Sprite OneLife;
     public Sprite ZeroLife;
+    public List<Sprite> SwordsAnimation = new List<Sprite>();
 
     CharacterController player;
     List<Image> trousseau = new List<Image>();
@@ -28,6 +30,26 @@ public class HUD : MonoBehaviour
         Life.sprite = ThreeLife;
         Keys.enabled = false;
         BossKeys.enabled = false;
+        Sword.enabled = false;
+        SwordBackGround.enabled = false;
+    }
+
+    public void SetSword()
+    {
+        if (player.zone.sword)
+        {
+            Sword.enabled = true;
+            SwordBackGround.enabled = true;
+
+            Sword.sprite = SwordsAnimation[player.zone.durability - 1];
+            Debug.Log(player.zone.durability);
+
+        }
+        else
+        {
+            SwordBackGround.enabled = false;
+            Sword.enabled = false;
+        }
     }
 
     public void SetLife()
