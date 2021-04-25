@@ -13,6 +13,9 @@ public class LockedBigDoor : Interactable
     public Animator animatorRight;
     public Animator animatorLeft;
 
+    public AudioSource source;
+    public AudioClip open;
+
     private void Awake()
     {
 
@@ -39,5 +42,6 @@ public class LockedBigDoor : Interactable
     {
         animatorRight.SetTrigger("OpenDoor");
         animatorLeft.SetTrigger("OpenDoor");
+        source.PlayOneShot(open);
     }
 }

@@ -26,12 +26,14 @@ public class LockedDoor : Interactable
         if (player.keys >= LittleKeyPrice)
         {
             player.keys -= LittleKeyPrice;
+            player.Hud.SetKeys();
             Open();
             canInteract = false;
         }
         /*else if (player.BigKeys >= BigKeyPrice)
         {
             player.BigKeys -= BigKeyPrice;
+            player.Hud.SetKeys();
             Open();
             canInteract = false;
         }*/
