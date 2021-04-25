@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Teleport : Interactable
 {
-
     public GameObject TargetTeleport;
+
+    GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
 
     public override void Interact()
     {
-        CharacterController.Instance.transform.position = new Vector3(TargetTeleport.transform.position.x, TargetTeleport.transform.position.y, TargetTeleport.transform.position.z);
+        player.transform.position = new Vector3(TargetTeleport.transform.position.x, TargetTeleport.transform.position.y, TargetTeleport.transform.position.z);
     }
 }

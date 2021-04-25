@@ -24,7 +24,9 @@ public class Bullet : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             collision.transform.GetComponent<CharacterController>().Damage();
+
         }
         Destroy(gameObject);
+
     }
 }

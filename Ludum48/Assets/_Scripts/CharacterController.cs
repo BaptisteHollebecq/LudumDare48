@@ -207,6 +207,7 @@ public class CharacterController : MonoBehaviour
         canDash = false;
         dashing = true;
         attacking = false;
+        playStep = true;
         canAttack = true;
         collision.enabled = false;
         source.PlayOneShot(roll);

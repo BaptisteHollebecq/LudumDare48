@@ -14,7 +14,11 @@ public class Enemy : MonoBehaviour
     public Transform Visuel;
     public Transform PointA;
     public Transform PointB;
+    public GameObject spawnBullet;
     public GameObject Bullet;
+
+    public AudioSource source;
+    public AudioClip shot;
 
     Vector3 target;
     bool targetA = false;
@@ -106,9 +110,11 @@ public class Enemy : MonoBehaviour
 
     public void Shot()
     {
-
-        var inst = Instantiate(Bullet, transform.GetChild(0).position, Quaternion.identity);
-        inst.GetComponent<Bullet>().Direction = (Player.transform.position - transform.position).normalized;
+        source.PlayOneShot(shot);
+        var inst = Instantiate(Bullet, spawnBullet.transform.position, Quaternion.identity);
+        Vector3 dir = (Player.transform.position -transform.position).normalized;
+        dir.y = 0;
+        inst.GetComponent<Bullet>().Direction = dir;
     }
 
     public void Damage(float value)
