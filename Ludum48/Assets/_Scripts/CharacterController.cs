@@ -240,6 +240,7 @@ public class CharacterController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         yield return new WaitForSeconds(1);
         attacking = false;
+        collision.enabled = true;
     }
 
     private void OnCollisionEnter(Collision col)

@@ -48,7 +48,6 @@ public class Enemy : MonoBehaviour
             if (!attacking)
             {
                 
-                Debug.DrawRay(transform.position, (target - transform.position).normalized, Color.red);
                 if ((target - transform.position).magnitude < 0.1f)
                 {
                     if (targetA)
@@ -69,17 +68,18 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Vector3 lookat = new Vector3(CharacterController.Instance.transform.position.x, Visuel.position.y , CharacterController.Instance.transform.position.z);
+                Vector3 lookat = new Vector3(Player.transform.position.x, Visuel.position.y , Player.transform.position.z);
                 Visuel.LookAt(lookat);
             }
         }
         else
         {
+            Vector3 lookat = new Vector3(Player.transform.position.x, Visuel.position.y, Player.transform.position.z);
+            Visuel.LookAt(lookat);
             RaycastHit hit;
             bool raycast = Physics.Raycast(transform.position, Player.transform.position - transform.position, out hit);
             if (raycast && (Player.transform.position - transform.position).magnitude < Range && hit.transform.tag == "Player")
             {
-                Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                 if (!charging)
                     Charge = StartCoroutine(ShotCharging());
             }
@@ -87,6 +87,7 @@ public class Enemy : MonoBehaviour
             {
                 if (charging)
                 {
+
                     charging = false;
                     StopCoroutine(Charge);
                 }
@@ -136,8 +137,8 @@ public class Enemy : MonoBehaviour
         canAttack = false;
         if (animator != null)
             animator.SetTrigger("Attack");
-        CharacterController.Instance.Damage();
-        if (CharacterController.Instance.Life == 0)
+        Player.GetComponent<CharacterController>().Damage();
+        if (Player.GetComponent<CharacterController>().Life == 0)
         {
             if (animator != null)
                 animator.SetBool("Dance", true);
