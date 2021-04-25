@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float Range = 5;
     public float ChargingTime = 5;
     public float ReloadTime = 1;
+    public Transform Visuel;
     public Transform PointA;
     public Transform PointB;
     public GameObject Bullet;
@@ -22,6 +23,8 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
+
+    public Animator animator;
 
     private void Awake()
     {
@@ -44,34 +47,39 @@ public class Enemy : MonoBehaviour
         {
             if (!attacking)
             {
-                transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
-                transform.LookAt(new Vector3(target.x, transform.position.y, target.z));
-                if ((target - transform.position).magnitude < 0.01f)
+                
+                if ((target - transform.position).magnitude < 0.1f)
                 {
                     if (targetA)
                     {
                         target = PointB.position;
                         targetA = false;
+                        Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                     }
                     else
                     {
                         target = PointA.position;
                         targetA = true;
+                        Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
                     }
+                    
                 }
+                transform.Translate((target - transform.position).normalized * speed * Time.deltaTime);
             }
             else
             {
-                transform.LookAt(CharacterController.Instance.transform);
+                Vector3 lookat = new Vector3(Player.transform.position.x, Visuel.position.y , Player.transform.position.z);
+                Visuel.LookAt(lookat);
             }
         }
         else
         {
+            Vector3 lookat = new Vector3(Player.transform.position.x, Visuel.position.y, Player.transform.position.z);
+            Visuel.LookAt(lookat);
             RaycastHit hit;
             bool raycast = Physics.Raycast(transform.position, Player.transform.position - transform.position, out hit);
             if (raycast && (Player.transform.position - transform.position).magnitude < Range && hit.transform.tag == "Player")
             {
-                transform.LookAt(Player.transform.position);
                 if (!charging)
                     Charge = StartCoroutine(ShotCharging());
             }
@@ -79,6 +87,7 @@ public class Enemy : MonoBehaviour
             {
                 if (charging)
                 {
+
                     charging = false;
                     StopCoroutine(Charge);
                 }
@@ -106,17 +115,25 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Took " + value + " Damage");
         Life -= value;
-        //PTITE ANIM CHOUPIX DE DEGAT
+        animator.SetTrigger("Hit");
         if (Life <= 0)
         {
-            Destroy(gameObject); // PTITE ANIM CHOUPIX DE MORT
-            transform.parent.GetComponent<isDead>().dead = true;
+            animator.SetBool("Dead", true);
+            StartCoroutine(Die());
+            
         }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        transform.parent.GetComponent<isDead>().dead = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && canAttack)
+        if (other.tag == "Player" && canAttack && !RangedEnemy)
         {
             StartCoroutine(Attack());
         }
@@ -126,13 +143,21 @@ public class Enemy : MonoBehaviour
     {
         attacking = true;
         canAttack = false;
-        //lance ton anim ici frr
-        CharacterController.Instance.Damage();
-        if (CharacterController.Instance.Life == 0)
-            // la danse c'est ici que ca se passe 
-        yield return new WaitForSeconds(1);
-        attacking = false;
-        StartCoroutine(ReloadAttack());
+        if (animator != null)
+            animator.SetTrigger("Attack");
+        Player.GetComponent<CharacterController>().Damage();
+        if (Player.GetComponent<CharacterController>().Life == 0)
+        {
+            if (animator != null)
+                animator.SetBool("Dance", true);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+            attacking = false;
+            Visuel.LookAt(new Vector3(target.x, transform.position.y, target.z));
+            StartCoroutine(ReloadAttack());
+        }
     }
 
     IEnumerator ReloadAttack()
