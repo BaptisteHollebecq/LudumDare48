@@ -215,7 +215,7 @@ public class CharacterController : MonoBehaviour
     {
         Life--;
         canBeHit = false;
-
+        Hud.SetLife();
         animator.SetTrigger("Hit");
 
         if (Life == 0)
@@ -233,7 +233,7 @@ public class CharacterController : MonoBehaviour
 
     IEnumerator Respawn()
     {
-        //anim HUD
+        //anim HUd
         animator.SetBool("Dead", true);
         isDead = true;
         yield return new WaitForSeconds(5);

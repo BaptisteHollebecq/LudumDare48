@@ -46,12 +46,14 @@ public class Chest : Interactable
                 case item.Key:
                     {
                         player.keys++;
+                        player.Hud.SetKeys();
                         Anim.GetComponent<SpriteRenderer>().sprite = plusKey;
                         break;
                     }
                 case item.BigKey:
                     {
                         player.BigKeys++;
+                        player.Hud.SetKeys();
                         Anim.GetComponent<SpriteRenderer>().sprite = plusBoss;
                         break;
                     }

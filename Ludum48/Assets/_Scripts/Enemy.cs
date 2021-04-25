@@ -118,10 +118,17 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Hit");
         if (Life <= 0)
         {
-            animator.SetBool("Dead", true)
-            Destroy(gameObject); // PTITE ANIM CHOUPIX DE MORT
-            transform.parent.GetComponent<isDead>().dead = true;
+            animator.SetBool("Dead", true);
+            StartCoroutine(Die());
+            
         }
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        transform.parent.GetComponent<isDead>().dead = true;
     }
 
     private void OnTriggerEnter(Collider other)
