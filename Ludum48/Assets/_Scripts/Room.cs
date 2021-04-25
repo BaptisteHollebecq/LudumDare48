@@ -12,7 +12,9 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        Rewards.SetActive(false);
+        if (Rewards != null)
+            Rewards.SetActive(false);
+
         if (Enemies.Count != 0)
         {
             foreach (GameObject g in Enemies)
@@ -36,8 +38,12 @@ public class Room : MonoBehaviour
             {
                 d.Open();
             }
-            if (Rewards.active == false)
-                Rewards.SetActive(true);
+            if (Rewards != null)
+            {
+                if (Rewards.active == false)
+                    Rewards.SetActive(true);
+            }
+            
         }
     }
 
