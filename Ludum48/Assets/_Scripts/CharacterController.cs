@@ -15,6 +15,9 @@ public class CharacterController : MonoBehaviour
     public float AttackReloadTime = .05f;
     public float DashInvincibility = .1f;
     public float DashReloadTime = .2f;
+    [Header("")]
+    public float TimingRetourMenu = 7;
+    [Header("")]
 
     public GameObject attackZone;
     public GameObject InteractZone;
@@ -47,6 +50,9 @@ public class CharacterController : MonoBehaviour
     bool canBeHit = true;
 
     bool isDead = false;
+
+    bool backtoMenu = false;
+
     [HideInInspector] public Vector3 LastCheckPoint = new Vector3(0,1,0);
 
     [Header("Animation")]
@@ -95,7 +101,7 @@ public class CharacterController : MonoBehaviour
         if (isDead)
         {
             animator.SetBool("Dead", false);
-            Life = 1;
+            Life = 3;
             isDead = false;
         }
         Hud.SetLife();
@@ -183,6 +189,21 @@ public class CharacterController : MonoBehaviour
                 Izone.inRange.RemoveAt(0);
         }
 
+        if (Input.GetButtonDown("Start"))
+        {
+            if (!backtoMenu)
+            {
+                backtoMenu = true;
+                Hud.BackToTheMenu(TimingRetourMenu);
+                StartCoroutine(ResetMenu());
+            }
+            else
+            {
+                SceneManager.LoadScene(0);
+                Destroy(gameObject);
+            }
+        }
+
         if (dashing)
             speed *= 3.5f;
 
@@ -198,6 +219,12 @@ public class CharacterController : MonoBehaviour
             }
             animator.SetBool("Running", true);
         }
+    }
+
+    IEnumerator ResetMenu()
+    {
+        yield return new WaitForSeconds(TimingRetourMenu);
+        backtoMenu = false;
     }
 
     IEnumerator StepSound()

@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 1
+  SceneIndex: 0
 --- !u!1 &89963290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 498800188916325275, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
         type: 3}
       propertyPath: SwordDurability
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 498800190654287364, guid: d812bc9b3ff89fc4bb5a586c8dc163f3,
         type: 3}

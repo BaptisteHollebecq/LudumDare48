@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
-    public bool isDead = false;
+    bool isDead = false;
 
     public Animator animator;
 
