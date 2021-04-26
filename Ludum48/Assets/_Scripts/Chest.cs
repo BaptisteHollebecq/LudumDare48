@@ -64,6 +64,7 @@ public class Chest : Interactable
                         if (player.Life > 3)
                             player.Life = 3;
                         Anim.GetComponent<SpriteRenderer>().sprite = plusLife;
+                        player.Hud.SetLife();
                         break;
                     }
                 case item.Sword:
