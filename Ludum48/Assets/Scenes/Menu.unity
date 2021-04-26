@@ -5448,8 +5448,8 @@ Transform:
   - {fileID: 1044073605}
   - {fileID: 513926764}
   - {fileID: 613659334}
-  - {fileID: 1319604178}
   - {fileID: 1801322372}
+  - {fileID: 1319604178}
   m_Father: {fileID: 1412983932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7834,6 +7834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587129055852469263, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1761968839850596750, guid: c76b8fbec8f8bc54f9d30166bd58faf9,
         type: 3}
