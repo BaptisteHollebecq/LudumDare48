@@ -18,7 +18,7 @@ public class Chest : Interactable
    
     public List<GameObject> Enemies = new List<GameObject>();
 
-
+    public Animator animator;
     public  AudioSource source;
 
     private void Awake()
@@ -39,6 +39,7 @@ public class Chest : Interactable
     {
         base.Interact();
         source.Play();
+        animator.SetTrigger("OpenChest");
         if (!traped)
         {
             switch (Gift)

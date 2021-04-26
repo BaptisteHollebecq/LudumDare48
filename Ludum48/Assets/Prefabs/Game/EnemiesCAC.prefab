@@ -233,7 +233,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2468433868836213122
 MonoBehaviour:
@@ -265,6 +265,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 83ce494f3fcf7834189e3a6c3b66af31, type: 3}
   hit: {fileID: 8300000, guid: 28e9c74d1fbb4294e9411a6c5b4cf4dd, type: 3}
   Laugth: {fileID: 8300000, guid: 08689df8ae6a2ec45b9a84dcafac0959, type: 3}
+  isDead: 0
   animator: {fileID: 1099690433771905480}
 --- !u!135 &7687125240052924624
 SphereCollider:

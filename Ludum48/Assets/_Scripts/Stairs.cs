@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Stairs : Interactable
 {
+    public int SceneIndex;
+
+
     public override void Interact()
     {
         base.Interact();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.Find("Player").GetComponent<CharacterController>().Hud.TransiIn();
+        SceneManager.LoadScene(SceneIndex);
     }
 }
