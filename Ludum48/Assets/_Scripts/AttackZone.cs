@@ -54,7 +54,10 @@ public class AttackZone : MonoBehaviour
     public void Alamano()
     {
         sword = false;
+
         SetUp();
+
+        player.Hud.SetSword();
     }
 
     public void SetUp()
@@ -99,7 +102,18 @@ public class AttackZone : MonoBehaviour
             if (!Targets.Contains(other.gameObject))
                 Targets.Add(other.gameObject);
         }
-        if (other.tag == "Wall")
+        else if (other.tag == "Torch")
+        {
+            if (sword)
+            {
+
+                Light l = other.transform.GetChild(0).GetComponent<Light>();
+                if (l.enabled == false)
+                    l.enabled = true;
+                other.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Allumage");
+            }
+        }
+        else if (other.tag == "Wall")
         {
             if (sword)
             {
@@ -111,17 +125,6 @@ public class AttackZone : MonoBehaviour
                     weapon = false;
                 }
                 player.Hud.SetSword();
-            }
-        }
-        if (other.tag == "Torch")
-        {
-            if (sword)
-            {
-                
-                Light l = other.transform.GetChild(0).GetComponent<Light>();
-                if (l.enabled == false)
-                    l.enabled = true;
-                other.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Allumage");
             }
         }
     }
