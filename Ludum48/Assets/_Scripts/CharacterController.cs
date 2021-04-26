@@ -105,6 +105,7 @@ public class CharacterController : MonoBehaviour
             Life = 3;
             isDead = false;
         }
+
         Hud.SetLife();
         Hud.SetKeys();
         Hud.SetSword();
