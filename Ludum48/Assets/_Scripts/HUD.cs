@@ -111,19 +111,19 @@ public class HUD : MonoBehaviour
     {
         PlaceHolder.sprite = sp;
         PlaceHolder.enabled = true;
-        PlaceHolder.DOFade(1, timingFade);
+        PlaceHolder.DOFade(1, timingShowSprite);
     }
 
     public void HideSprite()
     {
-        PlaceHolder.DOFade(0, timingFade);
+        PlaceHolder.DOFade(0, timingShowSprite);
         PlaceHolder.sprite = null;
         PlaceHolder.enabled = false;
     }
 
     public void TransiOut()
     {
-        Transition.DOFade(0, 2).OnComplete(() =>
+        Transition.DOFade(0, timingFade).OnComplete(() =>
         {
             Transition.enabled = false;
         });
@@ -132,7 +132,7 @@ public class HUD : MonoBehaviour
     public void TransiIn()
     {
         Transition.enabled = true;
-        Transition.DOFade(1, 2);
+        Transition.DOFade(1, timingFade);
     }
 
     public void BackToTheMenu(float timing)
