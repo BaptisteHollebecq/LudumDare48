@@ -8,12 +8,8 @@ public class Buttons : MonoBehaviour
     public float transition = .2f;
 
 
-    AudioSource source;
+   public AudioSource source;
 
-    private void Awake()
-    {
-        source = GetComponent<AudioSource>();
-    }
 
     public void OnPointerEnter()
     {

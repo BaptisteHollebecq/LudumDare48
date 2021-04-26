@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     public Image SwordBackGround;
     public Image PlaceHolder;
     public Image Transition;
+    public Image BackToMenu;
     public float timingShowSprite;
     public float timingFade;
 
@@ -37,6 +38,7 @@ public class HUD : MonoBehaviour
         Sword.enabled = false;
         SwordBackGround.enabled = false;
         PlaceHolder.enabled = false;
+        BackToMenu.enabled = false;
     }
 
     public void SetSword()
@@ -130,6 +132,24 @@ public class HUD : MonoBehaviour
     {
         Transition.enabled = true;
         Transition.DOFade(1, 2);
+    }
+
+    public void BackToTheMenu(float timing)
+    {
+        BackToMenu.enabled = true;
+        BackToMenu.DOFade(1, .5f).OnComplete(() =>
+        {
+            StartCoroutine(ResetMenu(timing));
+        });
+    }
+
+    IEnumerator ResetMenu(float t)
+    {
+        yield return new WaitForSeconds(t);
+        BackToMenu.DOFade(0, .5f).OnComplete(() =>
+        {
+            BackToMenu.enabled = false;
+        });
     }
 
 }
