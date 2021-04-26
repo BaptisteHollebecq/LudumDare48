@@ -8821,12 +8821,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Doors.Array.data[0]
       value: 
-      objectReference: {fileID: 565655267}
+      objectReference: {fileID: 330869734}
     - target: {fileID: 8182557817911913384, guid: 7db3fb530958d014088852d45b5ca802,
         type: 3}
       propertyPath: Doors.Array.data[1]
       value: 
-      objectReference: {fileID: 330869734}
+      objectReference: {fileID: 565655267}
     - target: {fileID: 8182557817911913384, guid: 7db3fb530958d014088852d45b5ca802,
         type: 3}
       propertyPath: Enemies.Array.data[0]

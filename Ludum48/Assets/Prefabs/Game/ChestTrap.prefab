@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 6166252094014574660}
   - component: {fileID: 1312351941655049340}
   m_Layer: 0
-  m_Name: Chest
+  m_Name: ChestTrap
   m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
