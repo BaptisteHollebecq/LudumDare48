@@ -28,7 +28,9 @@ public class InteractionZone : MonoBehaviour
     {
         if (other.tag == "Interaction")
         {
-            inRange.Add(other.GetComponent<Interactable>());
+            Interactable i = other.GetComponent<Interactable>();
+            if (i.canInteract)
+                inRange.Add(i);
         }
     }
 
@@ -36,7 +38,9 @@ public class InteractionZone : MonoBehaviour
     {
         if (other.tag == "Interaction")
         {
-            inRange.Remove(other.GetComponent<Interactable>());
+            Interactable i = other.GetComponent<Interactable>();
+            if (inRange.Contains(i))
+                inRange.Remove(i);
         }
     }
 }
