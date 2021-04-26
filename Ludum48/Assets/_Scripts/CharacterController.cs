@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
-    private static CharacterController _instance;
-    public static CharacterController Instance
-    {
-        get { return _instance; }
-    }
+    public static CharacterController Instance;
 
     public GameObject Visuel;
     public int Life = 3;
@@ -69,20 +65,28 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        
+
         _rb = GetComponent<Rigidbody>();
         zone = attackZone.GetComponent<AttackZone>();
         Izone = InteractZone.GetComponent<InteractionZone>();
         InteractSprite.SetActive(false);
         attackZone.SetActive(false);
+        Hud.TransiOut();
     }
 
     private void OnLevelWasLoaded(int level)
     {
-        if (_instance != null && _instance != this)
-            Destroy(gameObject);
-
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
 
         transform.position = new Vector3(0, 1, 0);
         keys = 0;
@@ -97,6 +101,7 @@ public class CharacterController : MonoBehaviour
         Hud.SetLife();
         Hud.SetKeys();
         Hud.SetSword();
+        Hud.TransiOut();
     }
 
     private void Update()
@@ -265,10 +270,10 @@ public class CharacterController : MonoBehaviour
 
     IEnumerator Respawn()
     {
-        //anim HUd
         animator.SetBool("Dead", true);
         isDead = true;
-        yield return new WaitForSeconds(5);
+        Hud.TransiIn();
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         yield return new WaitForSeconds(1);
         attacking = false;

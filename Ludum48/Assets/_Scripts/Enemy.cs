@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
-    bool isDead = false;
+    public bool isDead = false;
 
     public Animator animator;
 
@@ -125,7 +125,6 @@ public class Enemy : MonoBehaviour
 
     public void Damage(float value)
     {
-        Debug.Log("Took " + value + " Damage");
         Life -= value;
         if (animator != null && !isDead)
         {
@@ -134,15 +133,16 @@ public class Enemy : MonoBehaviour
         }
         if (Life <= 0)
         {
+
             //attacking = true;
-            if (animator != null)
+            if (animator != null && !isDead)
             {
-                source.PlayOneShot(death);
-                animator.SetTrigger("isDead");
                 isDead = true;
+                animator.SetTrigger("isDead");
+                source.PlayOneShot(death);
                 StartCoroutine(Die());
             }
-            else
+            else if (RangedEnemy)
             {
                 Destroy(gameObject);
                 transform.parent.GetComponent<isDead>().dead = true;
