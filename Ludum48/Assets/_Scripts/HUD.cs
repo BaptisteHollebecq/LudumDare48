@@ -110,15 +110,18 @@ public class HUD : MonoBehaviour
     public void ShowSprite(Sprite sp)
     {
         PlaceHolder.sprite = sp;
+        PlaceHolder.color = new Color(1,1,1,0);
         PlaceHolder.enabled = true;
         PlaceHolder.DOFade(1, timingShowSprite);
     }
 
     public void HideSprite()
     {
-        PlaceHolder.DOFade(0, timingShowSprite);
-        PlaceHolder.sprite = null;
-        PlaceHolder.enabled = false;
+        PlaceHolder.DOFade(0, timingShowSprite).OnComplete(() =>
+        {
+            PlaceHolder.sprite = null;
+            PlaceHolder.enabled = false;
+        });
     }
 
     public void TransiOut()
