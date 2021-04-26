@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8676981817857477433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808673234137720627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d352e02d3530c246b023d5bc89915e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canInteract: 1
-  LittleKeyPrice: 1
-  AnimSpeed: 0.5
-  animator: {fileID: 9221452376541951108}
-  source: {fileID: 0}
-  open: {fileID: 0}
 --- !u!65 &835510784708252674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50,6 +32,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8676981817857477433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808673234137720627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d352e02d3530c246b023d5bc89915e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canInteract: 1
+  LittleKeyPrice: 1
+  AnimSpeed: 0.5
+  animator: {fileID: 9221452376541951108}
+  source: {fileID: 0}
+  open: {fileID: 0}
 --- !u!1 &8001481217452872161
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 5019264646019462168}
   m_Layer: 0
   m_Name: Mur_PorteKey
-  m_TagString: Untagged
+  m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
