@@ -5343,6 +5343,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 633892247}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &342367510 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5252225199493016843, guid: 43690a3da4cf5474794f6f468a4d29c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4683467095049491886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &349149410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8874,7 +8880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &577523574
 Light:
   m_ObjectHideFlags: 0
@@ -31681,6 +31687,11 @@ PrefabInstance:
       propertyPath: Enemies.Array.data[1]
       value: 
       objectReference: {fileID: 311490016}
+    - target: {fileID: 1544146544476168248, guid: 43690a3da4cf5474794f6f468a4d29c7,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 342367510}
     - target: {fileID: 1544146544476168249, guid: 43690a3da4cf5474794f6f468a4d29c7,
         type: 3}
       propertyPath: m_Name
