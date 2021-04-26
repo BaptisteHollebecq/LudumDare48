@@ -720,6 +720,11 @@ PrefabInstance:
       propertyPath: timingFade
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2339198971089872906, guid: 6bce9d6895e623546a297ac230b358e7,
+        type: 3}
+      propertyPath: timingShowSprite
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3283723919357438457, guid: 6bce9d6895e623546a297ac230b358e7,
         type: 3}
       propertyPath: m_LocalPosition.x
