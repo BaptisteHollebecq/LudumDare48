@@ -6114,14 +6114,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
+    - target: {fileID: 3159156237646520305, guid: af6ab563e2654e0449d62b40f9f84447,
         type: 3}
-      propertyPath: m_Range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
-        type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9049,7 +9044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &577523574
 Light:
   m_ObjectHideFlags: 0
@@ -11396,9 +11391,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
+    - target: {fileID: 3159156237646520305, guid: af6ab563e2654e0449d62b40f9f84447,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14082,14 +14077,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
+    - target: {fileID: 3159156237646520305, guid: af6ab563e2654e0449d62b40f9f84447,
         type: 3}
-      propertyPath: m_Range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
-        type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24043,9 +24033,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6147185692359127902, guid: af6ab563e2654e0449d62b40f9f84447,
+    - target: {fileID: 3159156237646520305, guid: af6ab563e2654e0449d62b40f9f84447,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
