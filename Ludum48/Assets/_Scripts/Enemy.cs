@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public AudioClip attack;
     public AudioClip death;
     public AudioClip hit;
+    public AudioClip hitTourelle;
     public AudioClip Laugth;
 
     Vector3 target;
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
     bool charging = false;
     bool attacking = false;
     bool canAttack = true;
-    public bool isDead = false;
+    bool isDead = false;
 
     public Animator animator;
 
@@ -126,11 +127,20 @@ public class Enemy : MonoBehaviour
     public void Damage(float value)
     {
         Life -= value;
-        if (animator != null && !isDead)
+        if (!isDead)
         {
-            animator.SetTrigger("Hit");
-            source.PlayOneShot(hit);
+            if (animator != null)
+            {
+                animator.SetTrigger("Hit");
+                source.PlayOneShot(hit);
+            }
+            else
+            {
+                source.PlayOneShot(hitTourelle);
+            }
+
         }
+
         if (Life <= 0)
         {
 

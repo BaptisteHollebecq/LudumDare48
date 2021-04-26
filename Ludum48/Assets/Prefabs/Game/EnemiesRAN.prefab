@@ -262,6 +262,7 @@ MonoBehaviour:
   attack: {fileID: 0}
   death: {fileID: 0}
   hit: {fileID: 0}
+  hitTourelle: {fileID: 8300000, guid: a40b7e4b8c49a044693708be2a060679, type: 3}
   Laugth: {fileID: 0}
   animator: {fileID: 0}
 --- !u!82 &7103032129255993649
