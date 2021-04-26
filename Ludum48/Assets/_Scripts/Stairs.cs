@@ -14,5 +14,8 @@ public class Stairs : Interactable
         GameObject.Find("Player").GetComponent<CharacterController>().Hud.TransiIn();
         GameObject.Find("Player").GetComponent<CharacterController>().Hud.HideSprite();
         SceneManager.LoadScene(SceneIndex);
+        if (SceneIndex == 0)
+            Destroy(GameObject.Find("Player"));
+
     }
 }
