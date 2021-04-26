@@ -20237,6 +20237,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6808673234137720627, guid: 40e3bad151f40c54ea7279ca9b4de936,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 7224099715452586843, guid: 40e3bad151f40c54ea7279ca9b4de936,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20296,6 +20301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mur_PorteKey (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001481217452872161, guid: 40e3bad151f40c54ea7279ca9b4de936,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e3bad151f40c54ea7279ca9b4de936, type: 3}
