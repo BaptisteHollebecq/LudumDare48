@@ -97,6 +97,7 @@ public class HUD : MonoBehaviour
             {
                 var inst = Instantiate(Keys);
                 inst.transform.localPosition = new Vector3(inst.transform.localPosition.x + 30, inst.transform.localPosition.y, inst.transform.localPosition.z);
+                i++;
             }
         }
 
@@ -109,20 +110,23 @@ public class HUD : MonoBehaviour
     public void ShowSprite(Sprite sp)
     {
         PlaceHolder.sprite = sp;
+        PlaceHolder.color = new Color(1,1,1,0);
         PlaceHolder.enabled = true;
-        PlaceHolder.DOFade(1, timingFade);
+        PlaceHolder.DOFade(1, timingShowSprite);
     }
 
     public void HideSprite()
     {
-        PlaceHolder.DOFade(0, timingFade);
-        PlaceHolder.sprite = null;
-        PlaceHolder.enabled = false;
+        PlaceHolder.DOFade(0, timingShowSprite).OnComplete(() =>
+        {
+            PlaceHolder.sprite = null;
+            PlaceHolder.enabled = false;
+        });
     }
 
     public void TransiOut()
     {
-        Transition.DOFade(0, 2).OnComplete(() =>
+        Transition.DOFade(0, timingFade).OnComplete(() =>
         {
             Transition.enabled = false;
         });
@@ -131,7 +135,7 @@ public class HUD : MonoBehaviour
     public void TransiIn()
     {
         Transition.enabled = true;
-        Transition.DOFade(1, 2);
+        Transition.DOFade(1, timingFade);
     }
 
     public void BackToTheMenu(float timing)
