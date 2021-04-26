@@ -65,6 +65,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip Slash;
     public AudioClip roll;
     public AudioClip Hit;
+    public AudioClip Punch;
     public List<AudioClip> Steps = new List<AudioClip>();
     bool playStep = true;
 
@@ -256,6 +257,8 @@ public class CharacterController : MonoBehaviour
         animator.SetTrigger("Attack");
         if (zone.sword)
             source.PlayOneShot(Slash);
+        else
+            source.PlayOneShot(Punch);
         attacking = true;
         canAttack = false;
         attackZone.SetActive(true);
