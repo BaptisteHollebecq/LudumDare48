@@ -14645,8 +14645,8 @@ Transform:
   - {fileID: 1015128725}
   - {fileID: 495383051}
   - {fileID: 1368616638}
-  - {fileID: 1719962064}
   - {fileID: 617931894}
+  - {fileID: 1719962064}
   - {fileID: 67992052}
   - {fileID: 395271405}
   - {fileID: 1867727201}
@@ -23167,6 +23167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.677
+      objectReference: {fileID: 0}
+    - target: {fileID: 142616445575168727, guid: 41a2b8b2a9af86243ba453f2415985c7,
+        type: 3}
+      propertyPath: SceneIndex
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 142616445575168745, guid: 41a2b8b2a9af86243ba453f2415985c7,
         type: 3}
