@@ -107,9 +107,9 @@ public class AttackZone : MonoBehaviour
             if (sword)
             {
 
-                Light l = other.transform.GetChild(0).GetComponent<Light>();
-                if (l.enabled == false)
-                    l.enabled = true;
+                GameObject l = other.transform.GetChild(0).gameObject;
+                if (l.active == false)
+                    l.SetActive(true);
                 other.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Allumage");
             }
         }
