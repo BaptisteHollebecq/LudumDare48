@@ -97,6 +97,7 @@ public class HUD : MonoBehaviour
             {
                 var inst = Instantiate(Keys);
                 inst.transform.localPosition = new Vector3(inst.transform.localPosition.x + 30, inst.transform.localPosition.y, inst.transform.localPosition.z);
+                i++;
             }
         }
 
