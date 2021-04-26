@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: 0.2
+  source: {fileID: 4494859682106373364}
 --- !u!1 &846774222910887415
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: 0.2
+  source: {fileID: 3363397540041532724}
 --- !u!1 &1587129055852469263
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +437,8 @@ MonoBehaviour:
   CamPosQuit: {fileID: 0}
   OveredClip: {fileID: 8300000, guid: a880f639a3be0d944874fb4f8f46fbff, type: 3}
   PressedClip: {fileID: 8300000, guid: fa29a1f1c7e68744b98c639c87fe8fd2, type: 3}
+  isOnMenu: 0
+  isOnCredit: 0
 --- !u!82 &5613988458713118916
 AudioSource:
   m_ObjectHideFlags: 0
@@ -965,6 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: 0.2
+  source: {fileID: 1227597448431816281}
 --- !u!1 &2950497763360002322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: 0.2
+  source: {fileID: 6120047443478581681}
 --- !u!1 &8958025617884435304
 GameObject:
   m_ObjectHideFlags: 0
