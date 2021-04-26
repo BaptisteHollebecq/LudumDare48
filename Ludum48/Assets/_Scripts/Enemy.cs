@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
             if (animator != null)
             {
                 source.PlayOneShot(death);
-                animator.SetTrigger("isDead");
+                animator.SetBool("Dead", true);
                 isDead = true;
                 StartCoroutine(Die());
             }

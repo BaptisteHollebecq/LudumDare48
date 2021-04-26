@@ -13,6 +13,7 @@ public class HUD : MonoBehaviour
     public Image Sword;
     public Image SwordBackGround;
     public Image PlaceHolder;
+    public Image Transition;
     public float timingShowSprite;
     public float timingFade;
 
@@ -115,6 +116,20 @@ public class HUD : MonoBehaviour
         PlaceHolder.DOFade(0, timingFade);
         PlaceHolder.sprite = null;
         PlaceHolder.enabled = false;
+    }
+
+    public void TransiOut()
+    {
+        Transition.DOFade(0, 2).OnComplete(() =>
+        {
+            Transition.enabled = false;
+        });
+    }
+
+    public void TransiIn()
+    {
+        Transition.enabled = true;
+        Transition.DOFade(1, 2);
     }
 
 }
